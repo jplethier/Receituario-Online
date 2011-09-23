@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20110923151921) do
 
   create_table "usuarios", :force => true do |t|
     t.string   "nome",       :null => false
-    t.string   "cpf",        :null => false
+    t.string   "cpf_cnpj",   :null => false
     t.string   "senha",      :null => false
     t.string   "email",      :null => false
     t.datetime "created_at"
