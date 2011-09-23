@@ -1,33 +1,21 @@
 source 'http://rubygems.org'
 
+gem 'jquery-rails'
 gem 'rails', '3.1.0'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
+gem 'ruby-debug19', :require => 'ruby-debug'
 gem 'sqlite3'
+gem 'therubyracer-heroku', '0.8.1.pre3'
 
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
+group :development, :test do
+  gem 'factory_girl_rails', '>= 1.1.beta1'
+  gem 'rspec-rails', '>= 2.6.1'
 end
 
-gem 'jquery-rails'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
 group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
+  gem 'capybara'
+  gem 'cucumber', '0.7.3'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'spork'
 end
