@@ -11,7 +11,51 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110923151921) do
+ActiveRecord::Schema.define(:version => 20110927042824) do
+
+  create_table "balconista", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "farmaceuticos", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "farmacia", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "medicos", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.string   "orm",        :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pacientes", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "receita", :force => true do |t|
+    t.date     "dataCriacao",     :null => false
+    t.string   "descricao"
+    t.integer  "medico_id",       :null => false
+    t.integer  "paciente_id",     :null => false
+    t.integer  "farmacia_id"
+    t.date     "dataAtendimento"
+    t.integer  "farmaceutico_id"
+    t.integer  "balconista_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "usuarios", :force => true do |t|
     t.string   "nome",       :null => false
