@@ -1,4 +1,16 @@
 Receituario::Application.routes.draw do
+  get "usuario/new"
+
+  get "usuario/index"
+
+  get "usuario/show"
+
+  get "usuario/create"
+
+  get "usuario/edit"
+
+  get "usuario/update"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
