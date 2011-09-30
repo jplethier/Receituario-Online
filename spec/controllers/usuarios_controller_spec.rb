@@ -1,24 +1,10 @@
 require 'spec_helper'
 
-describe UsuarioController do
+describe UsuariosController do
 
   describe "GET 'new'" do
     it "should be successful" do
       get 'new'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'index'" do
-    it "should be successful" do
-      get 'index'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'show'" do
-    it "should be successful" do
-      get 'show'
       response.should be_success
     end
   end
@@ -30,9 +16,9 @@ describe UsuarioController do
     end
   end
 
-  describe "GET 'edit'" do
+  describe "GET 'index'" do
     it "should be successful" do
-      get 'edit'
+      get 'index'
       response.should be_success
     end
   end
@@ -40,6 +26,13 @@ describe UsuarioController do
   describe "GET 'update'" do
     it "should be successful" do
       get 'update'
+      response.should be_success
+    end
+  end
+
+  describe "GET 'edit'" do
+    it "should be successful" do
+      get 'edit'
       response.should be_success
     end
   end

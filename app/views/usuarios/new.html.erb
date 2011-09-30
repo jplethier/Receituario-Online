@@ -1,0 +1,19 @@
+<fieldset>
+  <legend>Cadastro de Usuário</legend>
+    <%= form_for(@usuario) do |f| %>
+      
+      <%= f.label :nome %></br>
+      <%= f.text_field :nome %></br>
+
+      <%= f.label :cpf_cnpj %></br>
+      <%= f.text_field :cpf_cnpj %></br>
+  
+      <%= f.label :email %></br>
+      <%= f.email_field :email %></br>
+  
+      <%= f.label :senha %></br>
+      <%= f.password_field :senha %></br>
+
+      <%= f.submit 'Confirmar' %>
+    <% end %>
+</fieldset>
