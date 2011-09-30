@@ -1,7 +1,7 @@
 class Usuario < ActiveRecord::Base
 
-  validates :cpf_cnpj,  :presence => true
-  validates :email,     :presence => true
+  validates :cpf_cnpj,  :presence => true, :uniqueness => true
+  validates :email,     :presence => true, :uniqueness => true
   validates :nome,      :presence => true
   validates :senha,     :presence => true
 

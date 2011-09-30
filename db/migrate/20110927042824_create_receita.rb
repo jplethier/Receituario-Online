@@ -1,7 +1,6 @@
 class CreateReceita < ActiveRecord::Migration
   def change
     create_table :receita do |t|
-      t.date :dataCriacao, :null => false
       t.string :descricao
       t.integer :medico_id, :null => false
       t.integer :paciente_id, :null => false
