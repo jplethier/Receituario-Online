@@ -11,41 +11,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110927042824) do
+ActiveRecord::Schema.define(:version => 20111004042918) do
 
-  create_table "balconista", :force => true do |t|
-    t.integer  "user_id",    :null => false
+  create_table "balconistas", :force => true do |t|
+    t.integer  "usuario_id", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "farmaceuticos", :force => true do |t|
-    t.integer  "user_id",    :null => false
+    t.integer  "usuario_id", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "farmacia", :force => true do |t|
-    t.integer  "user_id",    :null => false
+  create_table "farmacias", :force => true do |t|
+    t.integer  "usuario_id", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "medicos", :force => true do |t|
-    t.integer  "user_id",    :null => false
-    t.string   "orm",        :null => false
+    t.integer  "usuario_id", :null => false
+    t.string   "crm",        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "pacientes", :force => true do |t|
-    t.integer  "user_id",    :null => false
+    t.integer  "usuario_id", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "receita", :force => true do |t|
-    t.date     "dataCriacao",     :null => false
+  create_table "receitas", :force => true do |t|
     t.string   "descricao"
     t.integer  "medico_id",       :null => false
     t.integer  "paciente_id",     :null => false

@@ -15,8 +15,6 @@ class UsuariosController < ApplicationController
 
   def index
     @usuarios = Usuario.all
-    debugger
-    1
   end
 
   def update

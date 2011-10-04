@@ -1,5 +1,5 @@
 class Farmaceutico < ActiveRecord::Base
 
-  belongs_to :Usuario
+  belongs_to :usuario
 
 end
