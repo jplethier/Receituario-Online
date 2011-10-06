@@ -28,8 +28,31 @@ describe Usuario do
       usuario.should_not be_valid
     end
 
-    it "o email deve estar no formato correto" do
-      usuario.email = "joaozinho.com"
+    describe "email" do
+      it "o email joaozinho.com deve ser inválido" do
+        usuario.email = "joaozinho.com"
+        usuario.should_not be_valid
+      end
+
+      it "o email a@.com deve ser inválido" do
+        usuario.email = "a@.com"
+        usuario.should_not be_valid
+      end
+
+      it "o email a@.com deve ser inválido" do
+        usuario.email = "@com"
+        usuario.should_not be_valid
+      end
+
+      it "o email a@a.com deve válido" do
+        usuario.email = "a@a.com"
+        usuario.should be_valid
+      end
+
+      it "o email a@a.com.br deve válido" do
+        usuario.email = "a@a.com.br"
+        usuario.should be_valid
+      end
     end
   end
 end
