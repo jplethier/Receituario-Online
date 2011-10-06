@@ -4,4 +4,6 @@ class Medico < ActiveRecord::Base
 
   validates :crm, :presence => true
 
+  attr_accessible :crm
+
 end
