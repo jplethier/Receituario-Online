@@ -8,7 +8,7 @@ describe Medico do
 
   describe "Validações:" do
 
-    it "deve ter crm" do
+    it "crm deve ser obrigatório" do
       medico.crm = ""
       medico.should_not be_valid
     end

@@ -8,27 +8,28 @@ describe Usuario do
 
   describe "Validações:" do
 
-    it "deve ter email" do
-      usuario.email = ""
-      usuario.should_not be_valid
-    end
-
-    it "deve ter cpf ou cnpj" do
+    it "cpf ou cnpj deve ser obrigatório" do
       usuario.cpf_cnpj = ""
       usuario.should_not be_valid
     end
 
-    it "deve ter nome" do
+    it "nome deve ser obrigatório" do
       usuario.nome = ""
       usuario.should_not be_valid
     end
 
-    it "deve ter senha" do
+    it "senha deve ser obrigatória" do
       usuario.senha = ""
       usuario.should_not be_valid
     end
 
     describe "email" do
+
+      it "email deve ser obrigatório" do
+        usuario.email = ""
+        usuario.should_not be_valid
+      end
+
       it "o email joaozinho.com deve ser inválido" do
         usuario.email = "joaozinho.com"
         usuario.should_not be_valid
