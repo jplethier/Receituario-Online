@@ -2,5 +2,17 @@
 require 'spec_helper'
 
 describe Farmacia do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  let(:farmacia) {Factory.build :farmacia}
+  subject {farmacia}
+
+  describe "Validações" do
+
+    it "endereço deve ser obrigatório" do
+      farmacia.endereco = ""
+      farmacia.should_not be_valid
+    end
+    
+  end
+
 end
