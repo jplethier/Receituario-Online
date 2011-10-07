@@ -7,5 +7,6 @@
 #   inflect.singular /^(ox)en/i, '\1'
    inflect.irregular 'receita', 'receitas'
    inflect.irregular 'farmacia', 'farmacias'
+   inflect.irregular 'clinica_medico', 'clinicas_medicos'
 #   inflect.uncountable %w( fish sheep )
  end

@@ -11,10 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111006172615) do
+ActiveRecord::Schema.define(:version => 20111007144114) do
 
   create_table "balconistas", :force => true do |t|
     t.integer  "usuario_id", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clinicas", :force => true do |t|
+    t.string   "nome",       :null => false
+    t.string   "endereco",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clinicas_medicos", :force => true do |t|
+    t.date     "data_saida"
+    t.integer  "clinica_id", :null => false
+    t.integer  "medico_id",  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20111006172615) do
     t.integer  "usuario_id", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "endereco"
+    t.string   "endereco",   :null => false
   end
 
   create_table "medicos", :force => true do |t|
