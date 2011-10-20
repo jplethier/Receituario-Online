@@ -5,6 +5,7 @@ gem 'rails', '3.1.0'
 gem 'ruby-debug19', :require => 'ruby-debug'
 gem 'sqlite3'
 gem 'therubyracer-heroku', '0.8.1.pre3'
+gem 'devise'
 
 group :development, :test do
 
