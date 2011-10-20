@@ -2,6 +2,7 @@ class FarmaciasController < ApplicationController
   
   def new
     @farmacia = Farmacia.new
+    @farmacia.build_usuario
   end
 
   def create
@@ -9,7 +10,7 @@ class FarmaciasController < ApplicationController
     debugger
     1
     if @farmacia.save
-      redirect 'index'
+      redirect_to 'index'
     else
       render 'new'
     end
