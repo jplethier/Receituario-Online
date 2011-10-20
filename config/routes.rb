@@ -4,10 +4,6 @@ Receituario::Application.routes.draw do
 
   get "receitas/create"
 
-  get "farmacias/new"
-
-  get "farmacias/create"
-
   get "farmaceuticos/new"
 
   get "farmaceuticos/create"
@@ -25,6 +21,8 @@ Receituario::Application.routes.draw do
   get "medicos/create"
 
   resources :usuarios
+
+  resources :farmacias
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
