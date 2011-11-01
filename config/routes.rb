@@ -1,12 +1,19 @@
 Receituario::Application.routes.draw do
 
+  get "sessions/new"
+
   get "pages/home"
 
-  resources :clinicas
+  resources :clinicas do
+    resources :medicos
+  end
 
   resources :usuarios
 
-  resources :farmacias
+  resources :farmacias do
+    resources :farmaceuticos
+    resources :balconistas
+  end
 
   root :to => "pages#home"
 

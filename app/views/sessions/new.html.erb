@@ -1,0 +1,16 @@
+<h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+<fieldset>
+  <legend>Login</legend>
+  <%= form_for @usuario do |f| %>
+
+    <%= f.label :cpf_cnpj %></br>
+    <%= f.text_field :cpf_cnpj %></br>
+
+    <%= f.label :senha %></br>
+    <%= f.password_field :senha %></br>
+
+    <%= f.submit 'Login' %>
+  <% end %>
+
+</fieldset>
