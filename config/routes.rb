@@ -1,10 +1,14 @@
 Receituario::Application.routes.draw do
 
+  get "pages/home"
+
   resources :clinicas
 
   resources :usuarios
 
   resources :farmacias
+
+  root :to => "pages#home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

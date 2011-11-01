@@ -8,13 +8,16 @@ class FarmaciasController < ApplicationController
   def create
     @farmacia = Farmacia.new(params[:farmacia])
     if @farmacia.save
-      redirect_to 'index'
+      redirect_to root_path
     else
       render 'new'
     end
   end
 
   def index
+  end
+
+  def show
   end
 
 end

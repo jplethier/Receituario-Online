@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Receituario</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Receituario</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <div id="cabecalho" >
+      <div class="menuCabecalho">
+        <ol>
+          <li><%= link_to 'Cadastro de nova farmácia', new_farmacia_path %></li>
+          <li><%= link_to 'Cadastro de nova clínica', new_clinica_path %></li>
+        </ol>
+      </div>
+    </div>
 
-</body>
+    <div id="body">
+      <%= yield %>
+    </div>
+
+  </body>
 </html>

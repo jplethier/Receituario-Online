@@ -8,10 +8,13 @@ class ClinicasController < ApplicationController
   def create
     @clinica = Clinica.new(params[:clinica])
     if @clinica.save
-      render 'new'
+      redirect_to root_path
     else
       render 'new'
     end
+  end
+
+  def show
   end
 
 end
