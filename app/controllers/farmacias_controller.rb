@@ -7,8 +7,6 @@ class FarmaciasController < ApplicationController
 
   def create
     @farmacia = Farmacia.new(params[:farmacia])
-    debugger
-    1
     if @farmacia.save
       redirect_to 'index'
     else

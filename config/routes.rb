@@ -1,24 +1,6 @@
 Receituario::Application.routes.draw do
 
-  get "receitas/new"
-
-  get "receitas/create"
-
-  get "farmaceuticos/new"
-
-  get "farmaceuticos/create"
-
-  get "balconistas/new"
-
-  get "balconistas/create"
-
-  get "pacientes/new"
-
-  get "pacientes/create"
-
-  get "medicos/new"
-
-  get "medicos/create"
+  resources :clinicas
 
   resources :usuarios
 
