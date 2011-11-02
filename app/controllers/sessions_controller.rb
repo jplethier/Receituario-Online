@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @usuario = Usuario.authenticate(params[:session][:email], params[:session][:senha])
+    @usuario = Usuario.authenticate(params[:session][:cpf_cnpj], params[:session][:senha])
     if @usuario
-      sign_in user
+      sign_in @usuario
       redirect_to root_path
     else
       #erro
