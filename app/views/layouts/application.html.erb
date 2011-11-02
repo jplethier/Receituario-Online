@@ -23,8 +23,15 @@
             <% if tipo_de_usuario == Usuario::CLINICA %>
               <li><%= link_to 'Cadastrar Médico', new_clinica_medico_path(clinica_corrente) %></li>
             <% end %>
-            <% if tipo_de_usuario == Usuario::Farmacia %>
+            <% if tipo_de_usuario == Usuario::MEDICO || tipo_de_usuario == Usuario::CLINICA %>
+              <li><%= link_to 'Criar Receita Médica', "#" %></li>
+            <% end %>
+            <% if tipo_de_usuario == Usuario::FARMACIA %>
+              <li><%= link_to 'Cadastrar Balconista', new_farmacia_balconista_path(farmacia_corrente) %></li>
               <li><%= link_to 'Cadastrar Farmaceutico', new_farmacia_farmaceutico_path(farmacia_corrente) %></li>
+            <% end %>
+            <% if tipo_de_usuario == Usuario::FARMACIA || tipo_de_usuario == Usuario::FARMACEUTICO || tipo_de_usuario == Usuario::BALCONISTA %>
+              <li><%= link_to 'Atender Pedido', "#" %></li>
             <% end %>
             <li><%= link_to 'Sair', signout_path %></li>
           </ol>
