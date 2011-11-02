@@ -6,14 +6,18 @@ class Usuario < ActiveRecord::Base
   validates :nome,      :presence => true
   validates :senha,     :presence => true
 
+  attr_accessor :senha
+
   attr_accessible :cpf_cnpj, :email, :nome, :senha
 
   before_save :criptografar_senha
 
-  scope :por_cpf_cnpj, :where => ("usuarios.cpf_cnpj = ?", cpf_cnpj)
+  def self.por_cpf_cnpj(cpf_cnpj)
+    where("usuarios.cpf_cnpj = ?", cpf_cnpj)
+  end
 
   def self.authenticate(email, senha)
-    usuario = find_by_email(email)
+    usuario = por_cpf_cnpj(email)
     return nil  if usuario.nil?
     return usuario if usuario.possui_senha?(senha)
   end
@@ -23,14 +27,20 @@ class Usuario < ActiveRecord::Base
     (usuario && usuario.email == cookie_email) ? usuario : nil
   end
 
-  def possui_senha?(senha)
-    self.senha == criptografar_senha(senha)
+  def self.possui_senha?(senha)
+    debugger
+    1
+    self.senha == criptografar(senha)
+  end
+
+  def criptografar(senha)
+    Digest::SHA2.hexdigest(senha)
   end
 
   private
     
     def criptografar_senha
-      self.senha = Digest::SHA2.hexdigest(self.senha)
+      self.senha = criptografar(self.senha)
     end
     
 end
