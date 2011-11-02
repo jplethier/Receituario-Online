@@ -6,7 +6,8 @@ Receituario::Application.routes.draw do
 
   resources :usuarios
 
-  resources :sessions
+  match '/signin',  :to => 'sessions#new'
+  match '/signout',  :to => 'sessions#destroy'
 
   resources :farmacias do
     resources :farmaceuticos

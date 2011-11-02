@@ -1,8 +1,7 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h1>Login</h1>
 <fieldset>
   <legend>Login</legend>
-  <%= form_for @usuario do |f| %>
+  <%= form_for(:session, :url => sessions_path) do |f| %>
 
     <%= f.label :cpf_cnpj %></br>
     <%= f.text_field :cpf_cnpj %></br>

@@ -1,3 +1,4 @@
+require 'digest'
 class Usuario < ActiveRecord::Base
 
   validates :cpf_cnpj,  :presence => true, :uniqueness => true
@@ -11,19 +12,25 @@ class Usuario < ActiveRecord::Base
 
   scope :por_cpf_cnpj, :where => ("usuarios.cpf_cnpj = ?", cpf_cnpj)
 
-  def authenticate(usuario)
-    usuario1 = self.por_cpf_cnpj(usuario.cpf_cnpj)
-    if usuario1
-      usuario1.senha == usuario.senha
-    else
-      false
-    end
+  def self.authenticate(email, senha)
+    usuario = find_by_email(email)
+    return nil  if usuario.nil?
+    return usuario if usuario.possui_senha?(senha)
+  end
+
+  def self.authenticate_com_email(id, cookie_email)
+    usuario = find_by_id(id)
+    (usuario && usuario.email == cookie_email) ? usuario : nil
+  end
+
+  def possui_senha?(senha)
+    self.senha == criptografar_senha(senha)
   end
 
   private
     
     def criptografar_senha
-      self.senha = Hash(self.senha)
+      self.senha = Digest::SHA2.hexdigest(self.senha)
     end
     
 end

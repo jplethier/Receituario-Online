@@ -5,14 +5,19 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @usuario = Usuario.new(params[:usuario])
-    if Usuario.authenticate(@usuario)
-      #logar o usuario e salvar a sessao
+    @usuario = Usuario.authenticate(params[:session][:email], params[:session][:senha])
+    if @usuario
+      sign_in user
       redirect_to root_path
     else
       #erro
       render 'new'
     end
+  end
+
+  def destroy
+    sign_out
+    redirect_to root_path
   end
 
 end
