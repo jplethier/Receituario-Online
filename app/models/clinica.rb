@@ -11,4 +11,8 @@ class Clinica < ActiveRecord::Base
 
   attr_accessible :endereco, :usuario_attributes
 
+  def self.por_usuario(usuario)
+    where("clinicas.usuario_id = ?", usuario.id)
+  end
+
 end

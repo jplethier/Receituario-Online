@@ -9,4 +9,8 @@ class Medico < ActiveRecord::Base
 
   attr_accessible :crm
 
+  def self.por_usuario(usuario)
+    where("medicos.usuario_id = ?", usuario.id)
+  end
+
 end

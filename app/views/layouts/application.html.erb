@@ -16,6 +16,15 @@
           <li><%= link_to 'Cadastro de nova clínica', new_clinica_path %></li>
         </ol>
       </div>
+      <% if logado? %>
+        <div class="menuUsuario">
+          <ol>
+            <% if tipo_de_usuario == Usuario::CLINICA %>
+              <li><%= link_to 'Cadastrar Médico', new_clinica_medico_path(@clinica_corrente) %></li>
+            <% end %>
+          </ol>
+        </div>
+      <% end %>
     </div>
 
     <div id="body">

@@ -1,4 +1,5 @@
 class MedicosController < ApplicationController
+  
   def new
   end
 

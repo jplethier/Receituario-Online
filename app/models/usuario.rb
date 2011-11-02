@@ -1,5 +1,14 @@
+# coding: utf-8
 require 'digest'
 class Usuario < ActiveRecord::Base
+
+
+  FARMACIA = "Farmácia"
+  CLINICA = "Clínica"
+  PACIENTE = "Paciente"
+  MEDICO = "Médico"
+  FARMACEUTICO = "Farmacêutico"
+  BALCONISTA = "Balconista"
 
   validates :cpf_cnpj,  :presence => true, :uniqueness => true
   validates :email,     :presence => true, :uniqueness => true, :format => /^[a-z0-9A-Z.]+@[a-z0-9A-Z]+\.[a-z0-9A-Z]{1,3}(\.[a-z0-9A-Z]+)?$/
