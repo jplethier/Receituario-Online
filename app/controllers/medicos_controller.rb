@@ -8,6 +8,7 @@ class MedicosController < ApplicationController
   def create
     @medico = Medico.new(params[:medico])
     if @medico.save
+      ClinicaMedico.create!(:clinica => clinica_corrente, :medico => @medico)
       redirect_to root_path
     else
       render 'new'

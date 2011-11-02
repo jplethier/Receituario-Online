@@ -1,2 +1,22 @@
 <h1>Farmaceuticos#new</h1>
-<p>Find me in app/views/farmaceuticos/new.html.erb</p>
+<fieldset>
+  <legend>Cadastro de Farmaceuticos</legend>
+    <%= form_for([farmacia_corrente, @farmaceutico]) do |f| %>
+      
+      <%= f.fields_for :usuario do |u| %>
+        <%= u.label :nome %></br>
+        <%= u.text_field :nome %></br>
+
+        <%= u.label :cnpj %></br>
+        <%= u.text_field :cpf_cnpj %></br>
+      
+        <%= u.label :email %></br>
+        <%= u.email_field :email %></br>
+      
+        <%= u.label :senha %></br>
+        <%= u.password_field :senha %></br>
+      <% end %>
+
+      <%= f.submit 'Confirmar' %>
+    <% end %>
+</fieldset>
