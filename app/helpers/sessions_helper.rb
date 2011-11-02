@@ -15,6 +15,7 @@ module SessionsHelper
   def sign_out
     cookies.delete(:remember_token)
     self.usuario_corrente = nil
+    @tipo_de_usuario = nil
   end
 
   def usuario_corrente=(usuario)
@@ -95,9 +96,6 @@ module SessionsHelper
         nil
       end
     end
-    puts @tipo_de_usuario
-    debugger
-    1
     @tipo_de_usuario
   end
 
