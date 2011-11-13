@@ -17,6 +17,11 @@ describe Receita do
       receita.paciente = nil
       receita.should_not be_valid
     end
+
+    it "deve ter descricao" do
+      receita.descricao = ""
+      receita.should_not be_valid
+    end
     
   end
 
