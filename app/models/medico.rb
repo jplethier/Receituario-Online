@@ -4,8 +4,8 @@ class Medico < ActiveRecord::Base
 
   accepts_nested_attributes_for :usuario
 
-  has_many :clinicas_medicos
-  has_many :clinicas, :through => :clinicas_medicos
+  has_many :clinicaMedicos
+  has_many :clinicas, :through => :clinicaMedicos
 
   validates :crm, :presence => true
 
