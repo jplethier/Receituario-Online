@@ -16,6 +16,8 @@ Receituario::Application.routes.draw do
     resources :balconistas
   end
 
+  resources :pacientes
+
   root :to => "pages#home"
 
   # The priority is based upon order of creation:

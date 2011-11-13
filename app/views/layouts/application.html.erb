@@ -25,6 +25,7 @@
             <% end %>
             <% if tipo_de_usuario == Usuario::MEDICO || tipo_de_usuario == Usuario::CLINICA %>
               <li><%= link_to 'Criar Receita Médica', "#" %></li>
+              <li><%= link_to 'Cadastrar Paciente', new_paciente_path %></li>
             <% end %>
             <% if tipo_de_usuario == Usuario::FARMACIA %>
               <li><%= link_to 'Cadastrar Balconista', new_farmacia_balconista_path(farmacia_corrente) %></li>
