@@ -6,7 +6,7 @@
     <%= form_for([clinica_corrente, medico_corrente, @receita]) do |f| %>
       
       <%= f.label :paciente %></br>
-      <%= f.select :paciente, @pacientes, {:include_blank => 'Selecione'} %></br>
+      <%= f.select :paciente_id, Paciente.all.collect { |p| [p.usuario.nome, p.id]}, {:include_blank => 'Selecione'} %></br>
 
       <%= f.label :descricao %></br>
       <%= f.text_area :descricao %></br>
