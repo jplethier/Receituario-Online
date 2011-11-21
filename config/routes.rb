@@ -1,7 +1,9 @@
 Receituario::Application.routes.draw do
 
   resources :clinicas do
-    resources :medicos
+    resources :medicos do
+      resources :receitas
+    end
   end
 
   resources :usuarios
@@ -15,6 +17,8 @@ Receituario::Application.routes.draw do
     resources :farmaceuticos
     resources :balconistas
   end
+
+  resources :pacientes
 
   root :to => "pages#home"
 

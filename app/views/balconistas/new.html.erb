@@ -1,2 +1,22 @@
 <h1>Balconistas#new</h1>
-<p>Find me in app/views/balconistas/new.html.erb</p>
+<fieldset>
+  <legend>Cadastro de Balconistas</legend>
+    <%= form_for([farmacia_corrente, @balconista]) do |f| %>
+      
+      <%= f.fields_for :usuario do |u| %>
+        <%= u.label :nome %></br>
+        <%= u.text_field :nome %></br>
+
+        <%= u.label :cnpj %></br>
+        <%= u.text_field :cpf_cnpj %></br>
+      
+        <%= u.label :email %></br>
+        <%= u.email_field :email %></br>
+      
+        <%= u.label :senha %></br>
+        <%= u.password_field :senha %></br>
+      <% end %>
+
+      <%= f.submit 'Confirmar' %>
+    <% end %>
+</fieldset>

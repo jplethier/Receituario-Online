@@ -2,6 +2,15 @@ class Farmaceutico < ActiveRecord::Base
 
   belongs_to :usuario
 
+<<<<<<< HEAD
+  has_many :farmacias_farmaceuticos
+  has_many :farmacias, :through => :farmacias_farmaceuticos
+=======
+  accepts_nested_attributes_for :usuario
+
+  attr_accessible :usuario_attributes
+>>>>>>> b9294167b97883aa7df9a0523d29042f5155ed36
+
   def self.por_usuario(usuario)
     where("farmaceuticos.usuario_id = ?", usuario.id)
   end

@@ -8,6 +8,9 @@ class SessionsController < ApplicationController
     @usuario = Usuario.authenticate(params[:session][:cpf_cnpj], params[:session][:senha])
     if @usuario
       sign_in @usuario
+      if tipo_de_usuario == Usuario::MEDICO
+        clinica_corrente = medico_corrente.clinicas.first
+      end
       redirect_to root_path
     else
       #erro
