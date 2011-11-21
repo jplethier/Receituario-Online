@@ -1,0 +1,11 @@
+class CreateFarmaciasFarmaceuticos < ActiveRecord::Migration
+  def change
+    create_table :farmacias_farmaceuticos do |t|
+      t.integer :farmacia_id
+      t.integer :farmaceutico_id
+      t.date :data_demissao
+
+      t.timestamps
+    end
+  end
+end

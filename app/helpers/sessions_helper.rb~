@@ -22,7 +22,6 @@ module SessionsHelper
   end
 
   def usuario_corrente=(usuario)
-    logger.debug(@usuario_corrente)	
     @usuario_corrente = usuario
   end
 
