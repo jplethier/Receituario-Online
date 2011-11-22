@@ -30,8 +30,6 @@ class Usuario < ActiveRecord::Base
   def self.authenticate(cpf_cnpj, senha)
     usuario = por_cpf_cnpj(cpf_cnpj).first
     return nil  if usuario.nil?
-    #TODO: fazer funcionar a chamada para outro método dentro da classe
-    #return usuario if usuario.senha == criptografar(senha)
     return usuario if usuario.senha == Digest::SHA2.hexdigest(senha)
   end
 
@@ -43,8 +41,6 @@ class Usuario < ActiveRecord::Base
   private
     
     def criptografar_senha
-      #TODO: fazer funcionar a chamada para outro método dentro da classe
-      #self.senha = criptografar(self.senha)
       self.senha = Digest::SHA2.hexdigest(self.senha)
     end
     
