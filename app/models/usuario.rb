@@ -31,8 +31,8 @@ class Usuario < ActiveRecord::Base
     usuario = por_cpf_cnpj(cpf_cnpj).first
     return nil  if usuario.nil?
     #TODO: fazer funcionar a chamada para outro método dentro da classe
-    #return usuario if usuario.senha = criptografar(senha)
-    return usuario if usuario.senha = Digest::SHA2.hexdigest(senha)
+    #return usuario if usuario.senha == criptografar(senha)
+    return usuario if usuario.senha == Digest::SHA2.hexdigest(senha)
   end
 
   def self.authenticate_com_email(id, cookie_email)

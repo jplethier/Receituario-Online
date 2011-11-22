@@ -32,7 +32,7 @@
               <li><%= link_to 'Cadastrar Farmaceutico', new_farmacia_farmaceutico_path(farmacia_corrente) %></li>
             <% end %>
             <% if tipo_de_usuario == Usuario::FARMACIA || tipo_de_usuario == Usuario::FARMACEUTICO || tipo_de_usuario == Usuario::BALCONISTA %>
-              <li><%= link_to 'Atender Pedido', "#" %></li>
+              <li><%= link_to 'Procurar Receitas', receitas_path %></li>
             <% end %>
             <li><%= link_to 'Sair', signout_path %></li>
           </ol>

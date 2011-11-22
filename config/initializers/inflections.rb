@@ -9,5 +9,7 @@
    inflect.irregular 'farmacia', 'farmacias'
    inflect.irregular 'clinica_medico', 'clinicas_medicos'
    inflect.irregular 'balconista', 'balconistas'
+   inflect.irregular 'balconista_farmacia', 'balconistas_farmacias'
+   inflect.irregular 'farmacia_farmaceutico', 'farmacias_farmaceuticos'
 #   inflect.uncountable %w( fish sheep )
  end

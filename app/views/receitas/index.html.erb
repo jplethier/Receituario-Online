@@ -1,0 +1,13 @@
+<h1>Receitas#index</h1>
+<p>Find me in app/views/receitas/index.html.erb</p>
+
+<%= @receitas.each do |r| %>
+
+  <fieldset>
+    <legend>Receita número <%= r.id %></legend>
+    <%= r.paciente.usuario.nome %>
+    <%= r.description %>
+    <%= link_to "Visualizar", receita_path(r) %>
+  </fieldset>
+
+<% end %>
