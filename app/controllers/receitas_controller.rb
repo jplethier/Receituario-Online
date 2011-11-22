@@ -15,4 +15,24 @@ class ReceitasController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    
+  end
+
+  def index
+    @receitas = Receita.all
+  end
+
+  def atender
+    @receita.atendente = farmaceutico_corrente if tipo_de_usuario == Usuario::FARMACEUTICO
+    @receita.atendente = balconista_corrente if tipo_de_usuario == Usuario::BALCONISTA
+    @receita.farmacia = farmacia_corrente
+  end
+
+  def show
+  end
+
 end

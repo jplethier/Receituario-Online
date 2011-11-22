@@ -55,11 +55,18 @@ module SessionsHelper
 
   def farmacia_corrente
     @farmacia_corrente ||= Farmacia.por_usuario(usuario_from_remember_token).first
+    if not @farmacia_corrente
+      if tipo_de_usuario == Usuario::BALCONISTA
+        @farmacia_corrente = balconista_corrente.farmacias.first
+      elsif tipo_de_usuario == Usuario::FARMACEUTICO
+        @farmacia_corrente = farmaceutico_corrente.farmacias.first
+      end
+    end
   end
 
   def clinica_corrente
     @clinica_corrente ||= Clinica.por_usuario(usuario_from_remember_token).first
-    if not @clinica_corrente
+    if not @clinica_corrente && tipo_de_usuario == Usuario::MEDICO
       @clinica_corrente = medico_corrente.clinicas.first
     end
     @clinica_corrente
@@ -88,17 +95,17 @@ module SessionsHelper
   def tipo_de_usuario
     if @tipo_de_usuario.nil?
       if paciente_corrente
-        @tipo_de_usuario = Usuario::FARMACIA
+        @tipo_de_usuario = Usuario::PACIENTE
       elsif medico_corrente
         @tipo_de_usuario = Usuario::MEDICO
       elsif clinica_corrente
         @tipo_de_usuario = Usuario::CLINICA
       elsif balconista_corrente
-        @tipo_de_usuario = Usuario::PACIENTE
+        @tipo_de_usuario = Usuario::BALCONISTA
       elsif farmaceutico_corrente
         @tipo_de_usuario = Usuario::FARMACEUTICO
       elsif farmacia_corrente
-        @tipo_de_usuario = Usuario::BALCONISTA
+        @tipo_de_usuario = Usuario::FARMACIA
       else
         nil
       end
