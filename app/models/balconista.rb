@@ -9,6 +9,8 @@ class Balconista < ActiveRecord::Base
   has_many :balconistas_farmacias
   has_many :farmacias, :through => :balconistas_farmacias
 
+  has_many :receitas, :as => :atendente
+
   def self.por_usuario(usuario)
     where("balconistas.usuario_id = ?", usuario.id)
   end

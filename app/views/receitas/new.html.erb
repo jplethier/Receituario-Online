@@ -3,7 +3,7 @@
 
 <fieldset>
   <legend>Nova Receita</legend>
-    <%= form_for([clinica_corrente, medico_corrente, @receita]) do |f| %>
+    <%= form_for(@receita) do |f| %>
       
       <%= f.label :paciente %></br>
       <%= f.select :paciente_id, Paciente.all.collect { |p| [p.usuario.nome, p.id]}, {:include_blank => 'Selecione'} %></br>

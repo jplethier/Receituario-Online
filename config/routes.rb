@@ -1,9 +1,7 @@
 Receituario::Application.routes.draw do
 
   resources :clinicas do
-    resources :medicos do
-      resources :receitas
-    end
+    resources :medicos
   end
 
   resources :usuarios
@@ -19,6 +17,10 @@ Receituario::Application.routes.draw do
   end
 
   resources :pacientes
+
+  resources :receitas do
+    get "atender"
+  end
 
   root :to => "pages#home"
 
