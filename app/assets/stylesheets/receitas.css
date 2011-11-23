@@ -1,4 +1,21 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+
+
+div.lista_receitas { border: medium ridge #003399; }
+
+div.lista_receitas div.receita { border: medium solid #003399; padding: 10px; margin: 10px; }
+
+div.lista_receitas div.receita div.receita_id {}
+
+div.lista_receitas div.receita div.receita_paciente span.receita_paciente_nome {}
+
+div.lista_receitas div.receita div.receita_paciente span.receita_paciente_nome strong {}
+
+div.lista_receitas div.receita div.receita_descricao span {}
+
+div.lista_receitas div.receita div.receita_descricao span strong {}
+
+div.lista_receitas div.receita div.receita_medico span {}
+
+div.lista_receitas div.receita div.receita_medico span strong {}
+
+div.lista_receitas div.receita div.receita_selecionar {}

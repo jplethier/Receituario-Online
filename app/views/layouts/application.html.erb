@@ -8,41 +8,42 @@
   </head>
   <body>
 
-    <div id="cabecalho" >
-      <% if not logado? %>
-        <div class="menuCabecalho">
-          <ol>
-            <li><%= link_to 'Efetuar Login', signin_path %></li>
-            <li><%= link_to 'Cadastro de nova farmácia', new_farmacia_path %></li>
-            <li><%= link_to 'Cadastro de nova clínica', new_clinica_path %></li>
-          </ol>
-        </div>
-      <% else %>
-        <div class="menuUsuario">
-          <ol>
-            <% if tipo_de_usuario == Usuario::CLINICA %>
-              <li><%= link_to 'Cadastrar Médico', new_clinica_medico_path(clinica_corrente) %></li>
-            <% end %>
-            <% if tipo_de_usuario == Usuario::MEDICO %>
-              <li><%= link_to 'Criar Receita Médica', new_receita_path %></li>
-              <li><%= link_to 'Cadastrar Paciente', new_paciente_path %></li>
-            <% end %>
-            <% if tipo_de_usuario == Usuario::FARMACIA %>
-              <li><%= link_to 'Cadastrar Balconista', new_farmacia_balconista_path(farmacia_corrente) %></li>
-              <li><%= link_to 'Cadastrar Farmaceutico', new_farmacia_farmaceutico_path(farmacia_corrente) %></li>
-            <% end %>
-            <% if tipo_de_usuario == Usuario::FARMACIA || tipo_de_usuario == Usuario::FARMACEUTICO || tipo_de_usuario == Usuario::BALCONISTA %>
-              <li><%= link_to 'Procurar Receitas', receitas_path %></li>
-            <% end %>
-            <li><%= link_to 'Sair', signout_path %></li>
-          </ol>
-        </div>
-      <% end %>
-    </div>
+    <div id="pagina">
+      <div id="cabecalho" >
+        <% if not logado? %>
+          <div class="menuCabecalho">
+            <ul>
+              <li><%= link_to 'Efetuar Login', signin_path %></li>
+              <li><%= link_to 'Cadastro de nova farmácia', new_farmacia_path %></li>
+              <li><%= link_to 'Cadastro de nova clínica', new_clinica_path %></li>
+            </ul>
+          </div>
+        <% else %>
+          <div class="menuUsuario">
+            <ul>
+              <% if tipo_de_usuario == Usuario::CLINICA %>
+                <li><%= link_to 'Cadastrar Médico', new_clinica_medico_path(clinica_corrente) %></li>
+              <% end %>
+              <% if tipo_de_usuario == Usuario::MEDICO %>
+                <li><%= link_to 'Criar Receita Médica', new_receita_path %></li>
+                <li><%= link_to 'Cadastrar Paciente', new_paciente_path %></li>
+              <% end %>
+              <% if tipo_de_usuario == Usuario::FARMACIA %>
+                <li><%= link_to 'Cadastrar Balconista', new_farmacia_balconista_path(farmacia_corrente) %></li>
+                <li><%= link_to 'Cadastrar Farmaceutico', new_farmacia_farmaceutico_path(farmacia_corrente) %></li>
+              <% end %>
+              <% if tipo_de_usuario == Usuario::FARMACIA || tipo_de_usuario == Usuario::FARMACEUTICO || tipo_de_usuario == Usuario::BALCONISTA %>
+                <li><%= link_to 'Procurar Receitas', receitas_path %></li>
+              <% end %>
+              <li><%= link_to 'Sair', signout_path %></li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
 
-    <div id="body">
-      <%= yield %>
+      <div id="corpo">
+        <%= yield %>
+      </div>
     </div>
-
   </body>
 </html>

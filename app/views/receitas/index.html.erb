@@ -1,13 +1,22 @@
-<h1>Receitas#index</h1>
-<p>Find me in app/views/receitas/index.html.erb</p>
+<div class="lista_receitas">
+  <% @receitas.each do |r| %>
 
-<%= @receitas.each do |r| %>
-
-  <fieldset>
-    <legend>Receita número <%= r.id %></legend>
-    <%= r.paciente.usuario.nome %>
-    <%= r.description %>
-    <%= link_to "Visualizar", receita_path(r) %>
-  </fieldset>
-
-<% end %>
+    <div class="receita">
+      <div class="receita_id"> 
+        Receita número <%= r.id %>
+      </div>
+      <div class="receita_paciente"> 
+        <span class="receita_paciente_nome"><strong>Nome:</strong> <%= r.paciente.usuario.nome %></span>
+        <span class"receita_paciente_cpf"><strong>CPF:</strong> <%= r.paciente.usuario.cpf_cnpj %></span>
+      </div>
+      <div class="receita_descricao">
+        <span><strong>Prescrição:</strong> <%= r.descricao %></span>
+      </div>
+      <div class="receita_medico">
+        <span><strong>Médico:</strong> <%= r.medico.usuario.nome %> / <strong>CRM:</strong> <%= r.medico.crm %></span>
+      <div>
+      <div class="receita_selecionar">
+        <%= link_to "Selecionar", receita_path(r) %>
+      </div>
+  <% end %>
+</div>
