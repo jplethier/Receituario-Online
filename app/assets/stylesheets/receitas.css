@@ -1,10 +1,10 @@
+/* listagem de receitas */
 
-
-div.lista_receitas { border: medium ridge #003399; }
+div.lista_receitas { }
 
 div.lista_receitas div.receita { border: medium solid #003399; padding: 10px; margin: 10px; }
 
-div.lista_receitas div.receita div.receita_id {}
+div.lista_receitas div.receita div.receita_id { font: 15pt; }
 
 div.lista_receitas div.receita div.receita_paciente span.receita_paciente_nome {}
 
@@ -19,3 +19,26 @@ div.lista_receitas div.receita div.receita_medico span {}
 div.lista_receitas div.receita div.receita_medico span strong {}
 
 div.lista_receitas div.receita div.receita_selecionar {}
+
+
+/* página de exibiçao da receita */
+
+div.show_receita { padding: 10px; margin: 10px; }
+
+div.show_receita div.receita_id { font-size: 20pt; margin: 0 0 5px; }
+
+div.show_receita div.receita_paciente span.receita_paciente_nome {}
+
+div.show_receita div.receita_paciente span.receita_paciente_nome strong {}
+
+div.show_receita div.receita_descricao span {}
+
+div.show_receita div.receita_descricao span strong {}
+
+div.show_receita div.receita_medico span {}
+
+div.show_receita div.receita_medico span strong {}
+
+div.show_receita div.receita_atender {}
+
+div.show_receita div.receita_editar {}

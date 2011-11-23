@@ -1,0 +1,31 @@
+<div class="show_receita">
+  <div class="receita_id"> 
+    <strong> Receita #<%= @receita.id %> </strong>
+  </div>
+  <div class="receita_paciente"> 
+    <span class="receita_paciente_nome"><strong>Nome:</strong> <%= @receita.paciente.usuario.nome %></span>
+    <span class"receita_paciente_cpf"><strong>CPF:</strong> <%= @receita.paciente.usuario.cpf_cnpj %></span>
+  </div>
+  <div class="receita_descricao">
+    <span><strong>Prescrição:</strong> <%= @receita.descricao %></span>
+  </div>
+  <div class="receita_medico">
+    <span><strong>Médico:</strong> <%= @receita.medico.usuario.nome %> / <strong>CRM:</strong> <%= @receita.medico.crm %></span>
+  <div>
+  <% if  not @receita.atendida? %>
+    <% if tipo_de_usuario == Usuario::FARMACEUTICO || tipo_de_usuario == Usuario::BALCONISTA %>
+      <div class="receita_atender">
+        <%= link_to "Atender", receita_atender_path(@receita) %>
+      </div>
+    <% end %>
+    <% if tipo_de_usuario == Usuario::MEDICO && medico_corrente == @receita.medico %>
+      <div class="receita_editar">
+        <%= link_to "Editar", edit_receita_path(@receita) %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="receita_atendida">
+      <span>Receita atendida em <strong><%= @receita.dataAtendimento %></strong> na farmácia <strong><%= @receita.farmacia.usuario.nome %></strong> pelo funcionário <strong><%= @receita.atendente.usuario.nome %></strong></span>
+    </div>
+  <% end %>
+</div>

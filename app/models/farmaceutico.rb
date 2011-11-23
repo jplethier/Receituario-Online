@@ -6,8 +6,8 @@ class Farmaceutico < ActiveRecord::Base
 
   attr_accessible :usuario_attributes
 
-  has_many :farmacias_farmaceuticos
-  has_many :farmacias, :through => :farmacias_farmaceuticos
+  has_many :farmacia_farmaceuticos
+  has_many :farmacias, :through => :farmacia_farmaceuticos
 
   has_many :receitas, :as => :atendente
 
