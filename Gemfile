@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'jquery-rails'
 gem 'heroku'
+gem 'pg', :require => 'pg'
 gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'therubyracer-heroku', '0.8.1.pre3'
