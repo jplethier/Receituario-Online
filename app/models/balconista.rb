@@ -6,8 +6,8 @@ class Balconista < ActiveRecord::Base
 
   attr_accessible :usuario_attributes
 
-  has_many :balconistas_farmacias
-  has_many :farmacias, :through => :balconistas_farmacias
+  has_many :balconista_farmacias
+  has_many :farmacias, :through => :balconista_farmacias
 
   has_many :receitas, :as => :atendente
 

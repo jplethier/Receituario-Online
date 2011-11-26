@@ -9,10 +9,12 @@ class Receita < ActiveRecord::Base
   validates :paciente,  :presence => true
   validates :descricao, :presence => true
 
-  attr_accessible :atendente, :dataAtendimento, :descricao, :farmacia, :medico, :paciente
+  attr_accessible :atendente, :dataAtendimento, :descricao, :farmacia, :medico, :paciente_id, :paciente
 
   def atender(atendente, farmacia)
     self.atendente = atendente
+    debugger
+    1
     self.farmacia = farmacia
     self.dataAtendimento = Date.today
     self.save
@@ -22,5 +24,9 @@ class Receita < ActiveRecord::Base
     return false if self.dataAtendimento.nil?
     true
   end
+
+  #def atendente
+
+  #end
 
 end
