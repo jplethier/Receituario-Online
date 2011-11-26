@@ -29,6 +29,8 @@ class ReceitasController < ApplicationController
   def atender
     atendente = farmaceutico_corrente if tipo_de_usuario == Usuario::FARMACEUTICO
     atendente = balconista_corrente if tipo_de_usuario == Usuario::BALCONISTA
+    debugger
+    1
     @receita = Receita.find(params[:receita_id])
     if @receita.atender(atendente, farmacia_corrente)
       redirect_to root_path
