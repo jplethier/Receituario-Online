@@ -1,0 +1,10 @@
+<div class="clinica">
+  <div class="clinica_informacoes"> 
+    <span class="clinica_nome"><strong>Nome:</strong> <%= clinica.usuario.nome %></span><br/>
+    <span class"clinica_cnpj"><strong>CNPJ:</strong> <%= clinica.usuario.cpf_cnpj %></span><br/>
+    <span class="clinica_endereco"><strong>Endereço:</strong> <%= clinica.endereco %></span>
+  </div>
+  <div class="clinica_selecionar">
+    <%= link_to "Selecionar", clinica_path(clinica) %>
+  </div>
+</div>

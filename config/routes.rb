@@ -1,7 +1,12 @@
 Receituario::Application.routes.draw do
 
   resources :clinicas do
-    resources :medicos
+    resources :medicos do
+      member do
+        get 'alocar_medico'
+        get 'desalocar_medico'
+      end
+    end
   end
 
   resources :usuarios

@@ -1,0 +1,24 @@
+<div class="medico_perfil">
+  <div class="medico_informacoes"> 
+    <span class="medico_nome"><strong>Nome:</strong> <%= @medico.usuario.nome %></span><br/>
+    <span class="medico_cpf"><strong>CPF:</strong> <%= @medico.usuario.cpf_cnpj %></span>
+  </div>
+  <div class="medico_acoes">
+    <% if @medico.trabalha_na_clinica?(clinica_corrente) %>
+      <%= link_to "Desalocar médico a clínica", alocar_medico_clinica_medico_path(clinica_corrente, @medico) %>
+    <% else %>
+      <%= link_to "Alocar médico a clínica", alocar_medico_clinica_medico_path(clinica_corrente, @medico) %>
+    <% end %>
+  </div>
+  <div class="medico_historico">
+    <div class="lista_clinicas">
+      <span>Clínicas</span>
+    </div>
+    <div class="lista_receitas">
+      <span>Histórico de Receitas</span>
+      <% @medico.receitas.each do |receita| %>
+        <%= render :partial => 'receitas/receita', :locals => {:receita => receita} %>
+      <% end %>
+    </div>
+  </div>
+</div>

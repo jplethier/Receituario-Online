@@ -1,3 +1,4 @@
+# coding: UTF-8
 class MedicosController < ApplicationController
   
   def new
@@ -12,6 +13,33 @@ class MedicosController < ApplicationController
       redirect_to root_path
     else
       render 'new'
+    end
+  end
+
+  def index
+    @medicos = Medico.all
+  end
+
+  def show
+    @medico = Medico.find(params[:id])
+  end
+
+  def alocar_medico
+    medico = Medico.find(params[:id])
+    if ClinicaMedico.create!(:clinica => clinica_corrente, :medico => medico)
+      redirect_to root_path, :notice => "Médico alocado com sucesso!"
+    else
+      redirect_to clinica_medico_path(clinica_corrente, medico), :error => "Erro ao tentar alocar médico da clínica, por favor, tente novamente mais tarde!"
+    end
+  end
+
+  def desalocar_medico
+    medico = Medico.find(params[:id])
+    clinica_medico = ClinicaMedico.por_medico_e_clinica(medico_id, clinica_id)
+    if clinica_medito.destroy!
+      redirect_to root_path, :notice => "Médico desalocado com sucesso!"
+    else
+      redirect_to clinica_medico_path(clinica_corrente, medico), :error => "Erro ao tentar desalocar médico da clínica, por favor, tente novamente mais tarde!"
     end
   end
 

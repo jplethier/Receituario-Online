@@ -6,6 +6,7 @@ class Medico < ActiveRecord::Base
 
   has_many :clinicaMedicos
   has_many :clinicas, :through => :clinicaMedicos
+  has_many :receitas
 
   validates :crm, :presence => true
 
@@ -13,6 +14,13 @@ class Medico < ActiveRecord::Base
 
   def self.por_usuario(usuario)
     where("medicos.usuario_id = ?", usuario.id)
+  end
+
+  def trabalha_na_clinica?(clinica)
+    self.clinicas.each do |c|
+      return true if c == clinica
+    end
+    false
   end
 
 end

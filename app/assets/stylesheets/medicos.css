@@ -1,4 +1,27 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+/* listagem de medicos */
+
+div.lista_medicos { }
+
+div.lista_medicos div.medico { border: medium solid #003399; padding: 10px; margin: 10px; }
+
+div.lista_medicos div.medico div.medico_informacoes span {}
+
+div.lista_medicos div.medico div.medico_informacoes span strong {}
+
+div.lista_medicos div.medico div.medico_selecionar {}
+
+div.lista_medicos div.medico div.medico_selecionar a {}
+
+div.lista_medicos div.medico div.medico_selecionar a:hover { text-decoration: none; }
+
+/* perfil de medico */
+
+div.medico_perfil {}
+
+div.medico_perfil div.medico_informacoes { margin: 5px; }
+
+div.medico_perfil div.medico_informacoes span {}
+
+div.medico_perfil div.medico_informacoes span strong {}
+
+div.medico_perfil div.medico_historico { border: #6699CC solid; border-radius: 5px; padding: 10px; margin: 20px; }

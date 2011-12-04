@@ -27,6 +27,8 @@
             <ul>
               <% if tipo_de_usuario == Usuario::CLINICA %>
                 <li><%= link_to 'Cadastrar Médico', new_clinica_medico_path(clinica_corrente) %></li>
+                <li><%= link_to 'Procurar Médico', clinica_medicos_path(clinica_corrente) %></li>
+                <li><%= link_to 'Listar Médicos da Clínica', "#" %></li>
               <% end %>
               <% if tipo_de_usuario == Usuario::MEDICO %>
                 <li><%= link_to 'Criar Receita Médica', new_receita_path %></li>
@@ -34,7 +36,10 @@
               <% end %>
               <% if tipo_de_usuario == Usuario::FARMACIA %>
                 <li><%= link_to 'Cadastrar Balconista', new_farmacia_balconista_path(farmacia_corrente) %></li>
+                <li><%= link_to 'Procurar Balconistas', "#" %></li>
                 <li><%= link_to 'Cadastrar Farmaceutico', new_farmacia_farmaceutico_path(farmacia_corrente) %></li>
+                <li><%= link_to 'Procurar Farmacêuticos', "#" %></li>
+                <li><%= link_to 'Listar Funcionários da Farmácia', "#" %></li>
               <% end %>
               <% if tipo_de_usuario == Usuario::FARMACIA || tipo_de_usuario == Usuario::FARMACEUTICO || tipo_de_usuario == Usuario::BALCONISTA %>
                 

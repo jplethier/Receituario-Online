@@ -1,0 +1,14 @@
+<div class="lista_medicos">
+  <% @medicos.each do |medico| %>
+
+    <div class="medico">
+      <div class="medico_informacoes"> 
+        <span class="medico_nome"><strong>Nome:</strong> <%= medico.usuario.nome %></span><br/>
+        <span class="medico_cpf"><strong>CPF:</strong> <%= medico.usuario.cpf_cnpj %></span>
+      </div>
+      <div class="medico_selecionar">
+        <%= link_to "Selecionar", clinica_medico_path(clinica_corrente, medico) %>
+      </div>
+    </div>
+  <% end %>
+</div>
