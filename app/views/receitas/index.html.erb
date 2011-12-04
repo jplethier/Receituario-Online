@@ -1,23 +1,5 @@
 <div class="lista_receitas">
-  <% @receitas.each do |r| %>
-
-    <div class="receita">
-      <div class="receita_id"> 
-        <strong>Receita #<%= r.id %></strong>
-      </div>
-      <div class="receita_paciente"> 
-        <span class="receita_paciente_nome"><strong>Nome:</strong> <%= r.paciente.usuario.nome %></span>
-        <span class"receita_paciente_cpf"><strong>CPF:</strong> <%= r.paciente.usuario.cpf_cnpj %></span>
-      </div>
-      <div class="receita_descricao">
-        <span><strong>Prescrição:</strong> <%= r.descricao %></span>
-      </div>
-      <div class="receita_medico">
-        <span><strong>Médico:</strong> <%= r.medico.usuario.nome %> / <strong>CRM:</strong> <%= r.medico.crm %></span>
-      </div>
-      <div class="receita_selecionar">
-        <%= link_to "Selecionar", receita_path(r) %>
-      </div>
-    </div>
+  <% @receitas.each do |receita| %>
+    <%= render :partial => 'receitas/receita', :locals => {:receita => receita} %>
   <% end %>
 </div>

@@ -1,0 +1,18 @@
+<div class="receita">
+  <div class="receita_id"> 
+    <strong>Receita #<%= receita.id %></strong>
+  </div>
+  <div class="receita_paciente"> 
+    <span class="receita_paciente_nome"><strong>Nome:</strong> <%= receita.paciente.usuario.nome %></span>
+    <span class"receita_paciente_cpf"><strong>CPF:</strong> <%= receita.paciente.usuario.cpf_cnpj %></span>
+  </div>
+  <div class="receita_descricao">
+    <span><strong>Prescrição:</strong> <%= receita.descricao %></span>
+  </div>
+  <div class="receita_medico">
+    <span><strong>Médico:</strong> <%= receita.medico.usuario.nome %> / <strong>CRM:</strong> <%= receita.medico.crm %></span>
+  </div>
+  <div class="receita_selecionar">
+    <%= link_to "Selecionar", receita_path(receita) %>
+  </div>
+</div>

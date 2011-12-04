@@ -1,4 +1,27 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+/* listagem de pacientes */
+
+div.lista_pacientes { }
+
+div.lista_pacientes div.paciente { border: medium solid #003399; padding: 10px; margin: 10px; }
+
+div.lista_pacientes div.paciente div.paciente_informacoes span {}
+
+div.lista_pacientes div.paciente div.paciente_informacoes span strong {}
+
+div.lista_pacientes div.paciente div.paciente_selecionar {}
+
+div.lista_pacientes div.paciente div.paciente_selecionar a {}
+
+div.lista_pacientes div.paciente div.paciente_selecionar a:hover { text-decoration: none; }
+
+/* perfil de paciente */
+
+div.paciente_perfil {}
+
+div.paciente_perfil div.paciente_informacoes { margin: 5px; }
+
+div.paciente_perfil div.paciente_informacoes span {}
+
+div.paciente_perfil div.paciente_informacoes span strong {}
+
+div.paciente_perfil div.paciente_historico { border: #6699CC solid; border-radius: 5px; padding: 10px; margin: 20px; }

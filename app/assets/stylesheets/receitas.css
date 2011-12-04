@@ -2,7 +2,7 @@
 
 div.lista_receitas { }
 
-div.lista_receitas div.receita { border: medium solid #003399; padding: 10px; margin: 10px; }
+div.lista_receitas div.receita { border: medium solid #003399; padding: 10px; margin: 10px; background: #66CCCC; }
 
 div.lista_receitas div.receita div.receita_id { font: 15pt; }
 

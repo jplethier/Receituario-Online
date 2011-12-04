@@ -6,6 +6,8 @@ class Paciente < ActiveRecord::Base
 
   attr_accessible :usuario_attributes
 
+  has_many :receitas
+
   def self.por_usuario(usuario)
     where("pacientes.usuario_id = ?", usuario.id)
   end
