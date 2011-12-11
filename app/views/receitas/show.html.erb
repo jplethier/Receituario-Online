@@ -10,7 +10,7 @@
     <span><strong>Prescrição:</strong> <%= @receita.descricao %></span>
   </div>
   <div class="receita_medico">
-    <span><strong>Médico:</strong> <%= @receita.medico.usuario.nome %> / <strong>CRM:</strong> <%= @receita.medico.crm %></span>
+    <span><strong>Médico:</strong> <%= @receita.medico.usuario.nome %> / <strong>CRM:</strong> <%= @receita.medico.crm %> / <strong>Clínica:</strong> <%= @receita.clinica.usuario.nome %></span>
   <div>
   <% if  not @receita.atendida? %>
     <% if tipo_de_usuario == Usuario::FARMACEUTICO || tipo_de_usuario == Usuario::BALCONISTA %>

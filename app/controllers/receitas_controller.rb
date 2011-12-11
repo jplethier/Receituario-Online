@@ -8,6 +8,7 @@ class ReceitasController < ApplicationController
   def create
     @receita = Receita.new(params[:receita])
     @receita.medico = medico_corrente
+    @receita.clinica = clinica_corrente
     if @receita.save
       redirect_to root_path
     else
