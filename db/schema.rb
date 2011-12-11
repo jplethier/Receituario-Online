@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111128165849) do
+ActiveRecord::Schema.define(:version => 20111211210619) do
 
   create_table "balconistas", :force => true do |t|
     t.integer  "usuario_id", :null => false
@@ -28,10 +28,12 @@ ActiveRecord::Schema.define(:version => 20111128165849) do
   end
 
   create_table "clinicas", :force => true do |t|
-    t.string   "endereco",                  :null => false
+    t.string   "endereco",                      :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "usuario_id", :default => 0, :null => false
+    t.integer  "usuario_id",     :default => 0, :null => false
+    t.integer  "atendente_id"
+    t.string   "atendente_type"
   end
 
   create_table "clinicas_medicos", :force => true do |t|
@@ -56,8 +58,8 @@ ActiveRecord::Schema.define(:version => 20111128165849) do
   end
 
   create_table "farmacias_farmaceuticos", :force => true do |t|
-    t.integer  "farmacia_id"
-    t.integer  "farmaceutico_id"
+    t.integer  "farmacia_id",     :null => false
+    t.integer  "farmaceutico_id", :null => false
     t.date     "data_demissao"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -88,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20111128165849) do
     t.datetime "updated_at"
     t.integer  "atendente_id"
     t.string   "atendente_type"
+    t.integer  "clinica_id"
   end
 
   create_table "usuarios", :force => true do |t|

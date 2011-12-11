@@ -17,4 +17,12 @@ class ClinicasController < ApplicationController
   def show
   end
 
+  def medicos_da_clinica
+    clinicas_medicos = ClinicaMedico.por_clinica(clinica_corrente)
+    @medicos = Array.new
+    clinicas_medicos.each do |cm|
+      @medicos += [cm.medico]
+    end
+  end
+
 end

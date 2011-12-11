@@ -1,5 +1,6 @@
 class Receita < ActiveRecord::Base
 
+  belongs_to :clinica
   belongs_to :medico
   belongs_to :paciente
   belongs_to :farmacia

@@ -12,5 +12,9 @@ class ClinicaMedico < ActiveRecord::Base
     false
   end
 
+  def self.por_clinica(clinica)
+    where("clinicas_medicos.clinica_id = ?", clinica.id)
+  end
+
 end
   

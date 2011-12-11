@@ -1,6 +1,9 @@
 Receituario::Application.routes.draw do
 
   resources :clinicas do
+    member do
+      get 'medicos_da_clinica'
+    end
     resources :medicos do
       member do
         get 'alocar_medico'

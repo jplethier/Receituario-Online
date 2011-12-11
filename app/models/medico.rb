@@ -23,4 +23,7 @@ class Medico < ActiveRecord::Base
     false
   end
 
+  def self.que_trabalham_na_clinica(clinica)
+  end
+
 end

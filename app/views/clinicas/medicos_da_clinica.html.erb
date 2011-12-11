@@ -1,6 +1,5 @@
 <div class="lista_medicos">
   <% @medicos.each do |medico| %>
-
-    <%= render :partial => 'medico', :locals => {:medico => medico} %>
+    <%= render :partial => 'medicos/medico', :locals => {:medico => medico} %>
   <% end %>
 </div>

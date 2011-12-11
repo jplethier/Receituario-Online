@@ -28,7 +28,7 @@
               <% if tipo_de_usuario == Usuario::CLINICA %>
                 <li><%= link_to 'Cadastrar Médico', new_clinica_medico_path(clinica_corrente) %></li>
                 <li><%= link_to 'Procurar Médico', clinica_medicos_path(clinica_corrente) %></li>
-                <li><%= link_to 'Listar Médicos da Clínica', "#" %></li>
+                <li><%= link_to 'Listar Médicos da Clínica', medicos_da_clinica_clinica_path(clinica_corrente) %></li>
               <% end %>
               <% if tipo_de_usuario == Usuario::MEDICO %>
                 <li><%= link_to 'Criar Receita Médica', new_receita_path %></li>
