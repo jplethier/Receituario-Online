@@ -5,7 +5,7 @@
   </div>
   <div class="medico_acoes">
     <% if @medico.trabalha_na_clinica?(clinica_corrente) %>
-      <%= link_to "Desalocar médico a clínica", alocar_medico_clinica_medico_path(clinica_corrente, @medico) %>
+      <%= link_to "Desalocar médico a clínica", desalocar_medico_clinica_medico_path(clinica_corrente, @medico) %>
     <% else %>
       <%= link_to "Alocar médico a clínica", alocar_medico_clinica_medico_path(clinica_corrente, @medico) %>
     <% end %>

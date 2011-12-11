@@ -26,7 +26,9 @@ class MedicosController < ApplicationController
 
   def alocar_medico
     medico = Medico.find(params[:id])
-    if ClinicaMedico.create!(:clinica => clinica_corrente, :medico => medico)
+    clinica_medico = ClinicaMedico.new(:clinica => clinica_corrente, :medico => medico)
+    if clinica_medico.validar_medico_clinica_unicos
+      clinica_medico.save
       redirect_to root_path, :notice => "Médico alocado com sucesso!"
     else
       redirect_to clinica_medico_path(clinica_corrente, medico), :error => "Erro ao tentar alocar médico da clínica, por favor, tente novamente mais tarde!"
@@ -35,8 +37,8 @@ class MedicosController < ApplicationController
 
   def desalocar_medico
     medico = Medico.find(params[:id])
-    clinica_medico = ClinicaMedico.por_medico_e_clinica(medico_id, clinica_id)
-    if clinica_medito.destroy!
+    clinica_medico = ClinicaMedico.por_medico_e_clinica(medico.id, clinica_corrente.id)
+    if ClinicaMedico.destroy(clinica_medico)
       redirect_to root_path, :notice => "Médico desalocado com sucesso!"
     else
       redirect_to clinica_medico_path(clinica_corrente, medico), :error => "Erro ao tentar desalocar médico da clínica, por favor, tente novamente mais tarde!"
