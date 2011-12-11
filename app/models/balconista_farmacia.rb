@@ -15,5 +15,9 @@ class BalconistaFarmacia < ActiveRecord::Base
     return true if balconista_farmacia.nil?
     false
   end
+
+  def self.por_farmacia(farmacia)
+    where("balconistas_farmacias.farmacia_id = ?", farmacia.id)
+  end
   
 end

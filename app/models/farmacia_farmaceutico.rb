@@ -17,4 +17,8 @@ class FarmaciaFarmaceutico < ActiveRecord::Base
     false
   end
 
+  def self.por_farmacia(farmacia)
+    where("farmacias_farmaceuticos.farmacia_id =?", farmacia.id)
+  end
+
 end

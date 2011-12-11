@@ -20,12 +20,18 @@ Receituario::Application.routes.draw do
   resources :sessions
 
   resources :farmacias do
+    
+    member do
+      get 'funcionarios'
+    end
+
     resources :farmaceuticos do
       member do
         get 'alocar_farmaceutico'
         get 'desalocar_farmaceutico'
       end
     end
+    
     resources :balconistas do
       member do
         get 'alocar_balconista'

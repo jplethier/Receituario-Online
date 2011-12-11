@@ -20,4 +20,17 @@ class FarmaciasController < ApplicationController
   def show
   end
 
+  def funcionarios
+    farmacia_farmaceuticos = FarmaciaFarmaceutico.por_farmacia(farmacia_corrente)
+    @funcionarios = Array.new
+    farmacia_farmaceuticos.each do |ff|
+      @funcionarios += [ff.farmaceutico]
+    end
+
+    balconista_farmacia = BalconistaFarmacia.por_farmacia(farmacia_corrente)
+    balconista_farmacia.each do |bf|
+      @funcionarios += [bf.balconista]
+    end
+  end
+
 end

@@ -1,0 +1,14 @@
+<div class="lista_farmaceuticos">
+  <% @funcionarios.each do |funcionario| %>
+
+    <div class="farmaceutico">
+      <div class="farmaceutico_informacoes"> 
+        <span class="farmaceutico_nome"><strong>Nome:</strong> <%= funcionario.usuario.nome %></span><br/>
+        <span class="farmaceutico_cpf"><strong>CPF:</strong> <%= funcionario.usuario.cpf_cnpj %></span>
+      </div>
+      <div class="farmaceutico_selecionar">
+        
+      </div>
+    </div>
+  <% end %>
+</div>
