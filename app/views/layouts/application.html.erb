@@ -38,7 +38,7 @@
                 <li><%= link_to 'Cadastrar Balconista', new_farmacia_balconista_path(farmacia_corrente) %></li>
                 <li><%= link_to 'Procurar Balconistas', "#" %></li>
                 <li><%= link_to 'Cadastrar Farmaceutico', new_farmacia_farmaceutico_path(farmacia_corrente) %></li>
-                <li><%= link_to 'Procurar Farmacêuticos', "#" %></li>
+                <li><%= link_to 'Procurar Farmacêuticos', farmacia_farmaceuticos_path(farmacia_corrente) %></li>
                 <li><%= link_to 'Listar Funcionários da Farmácia', "#" %></li>
               <% end %>
               <% if tipo_de_usuario == Usuario::FARMACIA || tipo_de_usuario == Usuario::FARMACEUTICO || tipo_de_usuario == Usuario::BALCONISTA %>

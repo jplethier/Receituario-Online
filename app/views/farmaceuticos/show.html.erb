@@ -1,0 +1,24 @@
+<div class="farmaceutico_perfil">
+  <div class="farmaceutico_informacoes"> 
+    <span class="farmaceutico_nome"><strong>Nome:</strong> <%= @farmaceutico.usuario.nome %></span><br/>
+    <span class="farmaceutico_cpf"><strong>CPF:</strong> <%= @farmaceutico.usuario.cpf_cnpj %></span>
+  </div>
+  <div class="farmaceutico_acoes">
+    <% if @farmaceutico.trabalha_na_farmacia?(farmacia_corrente) %>
+      <%= link_to "Desalocar farmacêutico a farmácia", desalocar_farmaceutico_farmacia_farmaceutico_path(farmacia_corrente, @farmaceutico) %>
+    <% else %>
+      <%= link_to "Alocar farmacêutico a farmácia", alocar_farmaceutico_farmacia_farmaceutico_path(farmacia_corrente, @farmaceutico) %>
+    <% end %>
+  </div>
+  <div class="farmaceutico_historico">
+    <div class="lista_clinicas">
+      <span>Farmácias</span>
+    </div>
+    <div class="lista_receitas">
+      <span>Histórico de Receitas</span>
+      <% @farmaceutico.receitas.each do |receita| %>
+        <%= render :partial => 'receitas/receita', :locals => {:receita => receita} %>
+      <% end %>
+    </div>
+  </div>
+</div>

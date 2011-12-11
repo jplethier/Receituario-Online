@@ -1,4 +1,27 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+/* listagem de farmaceuticos */
+
+div.lista_farmaceuticos { }
+
+div.lista_farmaceuticos div.farmaceutico { border: medium solid #003399; padding: 10px; margin: 10px; }
+
+div.lista_farmaceuticos div.farmaceutico div.farmaceutico_informacoes span {}
+
+div.lista_farmaceuticos div.farmaceutico div.farmaceutico_informacoes span strong {}
+
+div.lista_farmaceuticos div.farmaceutico div.farmaceutico_selecionar {}
+
+div.lista_farmaceuticos div.farmaceutico div.farmaceutico_selecionar a {}
+
+div.lista_farmaceuticos div.farmaceutico div.farmaceutico_selecionar a:hover { text-decoration: none; }
+
+/* perfil de farmaceutico */
+
+div.farmaceutico_perfil {}
+
+div.farmaceutico_perfil div.farmaceutico_informacoes { margin: 5px; }
+
+div.farmaceutico_perfil div.farmaceutico_informacoes span {}
+
+div.farmaceutico_perfil div.farmaceutico_informacoes span strong {}
+
+div.farmaceutico_perfil div.farmaceutico_historico { border: #6699CC solid; border-radius: 5px; padding: 10px; margin: 20px; }

@@ -3,7 +3,7 @@
   <legend>Login</legend>
   <%= form_for(:session, :url => sessions_path) do |f| %>
 
-    <%= f.label :cpf_cnpj %></br>
+    <%= f.label "CPF ou CNPJ" %></br>
     <%= f.text_field :cpf_cnpj %></br>
 
     <%= f.label :senha %></br>

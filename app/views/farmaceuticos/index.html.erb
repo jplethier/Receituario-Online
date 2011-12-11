@@ -1,0 +1,14 @@
+<div class="lista_farmaceuticos">
+  <% @farmaceuticos.each do |farmaceutico| %>
+
+    <div class="farmaceutico">
+      <div class="farmaceutico_informacoes"> 
+        <span class="farmaceutico_nome"><strong>Nome:</strong> <%= farmaceutico.usuario.nome %></span><br/>
+        <span class="farmaceutico_cpf"><strong>CPF:</strong> <%= farmaceutico.usuario.cpf_cnpj %></span>
+      </div>
+      <div class="farmaceutico_selecionar">
+        <%= link_to "Selecionar", farmacia_farmaceutico_path(farmacia_corrente, farmaceutico) %>
+      </div>
+    </div>
+  <% end %>
+</div>
