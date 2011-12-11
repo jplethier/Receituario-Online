@@ -1,0 +1,24 @@
+<div class="farmaceutico_perfil">
+  <div class="farmaceutico_informacoes"> 
+    <span class="farmaceutico_nome"><strong>Nome:</strong> <%= @balconista.usuario.nome %></span><br/>
+    <span class="farmaceutico_cpf"><strong>CPF:</strong> <%= @balconista.usuario.cpf_cnpj %></span>
+  </div>
+  <div class="farmaceutico_acoes">
+    <% if @balconista.trabalha_na_farmacia?(farmacia_corrente) %>
+      <%= link_to "Desalocar balconista a farmácia", desalocar_balconista_farmacia_balconista_path(farmacia_corrente, @balconista) %>
+    <% else %>
+      <%= link_to "Alocar balconista a farmácia", alocar_balconista_farmacia_balconista_path(farmacia_corrente, @balconista) %>
+    <% end %>
+  </div>
+  <div class="farmaceutico_historico">
+    <div class="lista_clinicas">
+      <span>Farmácias</span>
+    </div>
+    <div class="lista_receitas">
+      <span>Histórico de Receitas</span>
+      <% @balconista.receitas.each do |receita| %>
+        <%= render :partial => 'receitas/receita', :locals => {:receita => receita} %>
+      <% end %>
+    </div>
+  </div>
+</div>

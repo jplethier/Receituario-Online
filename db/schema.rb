@@ -28,12 +28,10 @@ ActiveRecord::Schema.define(:version => 20111211210619) do
   end
 
   create_table "clinicas", :force => true do |t|
-    t.string   "endereco",                      :null => false
+    t.string   "endereco",                  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "usuario_id",     :default => 0, :null => false
-    t.integer  "atendente_id"
-    t.string   "atendente_type"
+    t.integer  "usuario_id", :default => 0, :null => false
   end
 
   create_table "clinicas_medicos", :force => true do |t|

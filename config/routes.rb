@@ -26,7 +26,12 @@ Receituario::Application.routes.draw do
         get 'desalocar_farmaceutico'
       end
     end
-    resources :balconistas
+    resources :balconistas do
+      member do
+        get 'alocar_balconista'
+        get 'desalocar_balconista'
+      end
+    end
   end
 
   resources :pacientes

@@ -15,4 +15,11 @@ class Balconista < ActiveRecord::Base
     where("balconistas.usuario_id = ?", usuario.id)
   end
 
+  def trabalha_na_farmacia?(farmacia)
+    self.farmacias.each do |f|
+      return true if f == farmacia
+    end
+    false
+  end
+
 end

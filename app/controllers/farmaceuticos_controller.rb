@@ -33,7 +33,7 @@ class FarmaceuticosController < ApplicationController
     if FarmaciaFarmaceutico.destroy(farmacia_farmaceutico)
       redirect_to root_path, :notice => "Farmacêutico desalocado com sucesso!"
     else
-      redirect_to farmacia_faramceutico_path(farmacia_corrente, farmaceutico), :error => "Erro ao tentar desalocar farmacêutico da farmácia, por favor, tente novamente mais tarde!"
+      redirect_to farmacia_farmaceutico_path(farmacia_corrente, farmaceutico), :error => "Erro ao tentar desalocar farmacêutico da farmácia, por favor, tente novamente mais tarde!"
     end
   end
 

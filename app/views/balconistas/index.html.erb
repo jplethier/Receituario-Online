@@ -1,0 +1,14 @@
+<div class="lista_farmaceuticos">
+  <% @balconistas.each do |balconista| %>
+
+    <div class="farmaceutico">
+      <div class="farmaceutico_informacoes"> 
+        <span class="farmaceutico_nome"><strong>Nome:</strong> <%= balconista.usuario.nome %></span><br/>
+        <span class="farmaceutico_cpf"><strong>CPF:</strong> <%= balconista.usuario.cpf_cnpj %></span>
+      </div>
+      <div class="farmaceutico_selecionar">
+        <%= link_to "Selecionar", farmacia_balconista_path(farmacia_corrente, balconista) %>
+      </div>
+    </div>
+  <% end %>
+</div>
