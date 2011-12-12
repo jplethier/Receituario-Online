@@ -17,10 +17,17 @@ class ReceitasController < ApplicationController
   end
 
   def edit
+    @receita = Receita.find(params[:id])
   end
 
   def update
-    
+    @receita = Receita.find(params[:id])
+    if Receita.update(@receita, params[:receita])
+      redirect_to root_path, :notice => "Receita atualizada com sucesso!"
+    else
+      flash.now[:notice] = "Erro ao atualizar oferta, tente novamente mais tarde!"
+      render "edit"
+    end
   end
 
   def index

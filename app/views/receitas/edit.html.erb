@@ -1,0 +1,13 @@
+<fieldset>
+  <legend>Editar Receita</legend>
+    <%= form_for(@receita) do |f| %>
+      
+      <%= f.label :paciente %>
+      <strong><%= @receita.paciente.usuario.nome %></strong></br></br>
+
+      <%= f.label :descricao %></br>
+      <%= f.text_area :descricao %></br>
+      
+      <%= f.submit 'Confirmar' %>
+    <% end %>
+</fieldset>
