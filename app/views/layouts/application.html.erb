@@ -53,6 +53,18 @@
       </div>
 
       <div id="corpo">
+        <%- flash.each do |name, msg| -%>
+          <% if name == :error %>
+            <div class="msg_erro"><p><%= msg %></p></div>
+          <% end %>
+          <% if name == :alert %>
+            <div class="msg_aviso"><p><%= msg %></p></div>
+          <% end %>
+          <% if name == :notice %>
+            <div class="msg_sucesso"><p><%= msg %></p></div>
+          <% end %>
+        <%- end -%>
+
         <%= yield %>
       </div>
     </div>
