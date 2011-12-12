@@ -10,6 +10,8 @@ class Farmacia < ActiveRecord::Base
   has_many :balconistas_farmacias
   has_many :balconistas, :through => :balconistas_farmacias
 
+  has_many :receitas
+
   validates :endereco, :presence => true
 
   attr_accessible :endereco, :usuario_attributes

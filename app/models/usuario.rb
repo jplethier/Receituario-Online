@@ -10,7 +10,7 @@ class Usuario < ActiveRecord::Base
   FARMACEUTICO = "Farmacêutico"
   BALCONISTA = "Balconista"
 
-  validates :cpf_cnpj,  :presence => true, :uniqueness => true
+  validates :cpf_cnpj,  :presence => true, :uniqueness => true, :numericality => true
   validates :email,     :presence => true, :uniqueness => true, :format => /^[a-z0-9A-Z.]+@[a-z0-9A-Z]+\.[a-z0-9A-Z]{1,3}(\.[a-z0-9A-Z]+)?$/
   validates :nome,      :presence => true
   validates :senha,     :presence => true

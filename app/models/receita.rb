@@ -9,8 +9,9 @@ class Receita < ActiveRecord::Base
   validates :medico,    :presence => true
   validates :paciente,  :presence => true
   validates :descricao, :presence => true
+  validates :clinica,   :presence => true
 
-  attr_accessible :atendente, :dataAtendimento, :descricao, :farmacia, :medico, :paciente_id, :paciente
+  attr_accessible :atendente, :clinica, :dataAtendimento, :descricao, :farmacia, :medico, :paciente_id, :paciente
 
   def atender(atendente, farmacia)
     self.atendente = atendente
@@ -25,9 +26,4 @@ class Receita < ActiveRecord::Base
     return false if self.dataAtendimento.nil?
     true
   end
-
-  #def atendente
-
-  #end
-
 end

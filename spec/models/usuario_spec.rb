@@ -6,10 +6,24 @@ describe Usuario do
   let(:usuario) {Factory.build :usuario}
   subject {usuario}
 
+  its(:save) { should be_true }
+
+  describe "Acessibilidade" do
+    it { should allow_mass_assignment_of(:cpf_cnpj) }
+    it { should allow_mass_assignment_of(:nome) }
+    it { should allow_mass_assignment_of(:senha) }
+    it { should allow_mass_assignment_of(:email) }
+  end
+
   describe "Validações:" do
 
     it "cpf ou cnpj deve ser obrigatório" do
       usuario.cpf_cnpj = ""
+      usuario.should_not be_valid
+    end
+
+    it "cpf ou cnpj devem ser numéricos" do
+      usuario.cpf_cnpj = "a"
       usuario.should_not be_valid
     end
 

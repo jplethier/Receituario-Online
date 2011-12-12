@@ -5,5 +5,6 @@ FactoryGirl.define do
     descricao "Factory Receita Descrição"
     medico
     paciente
+    clinica
   end
 end
