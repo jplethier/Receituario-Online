@@ -25,7 +25,7 @@ class ReceitasController < ApplicationController
     if Receita.update(@receita, params[:receita])
       redirect_to root_path, :notice => "Receita atualizada com sucesso!"
     else
-      flash.now[:notice] = "Erro ao atualizar oferta, tente novamente mais tarde!"
+      flash.now[:error] = "Erro ao atualizar oferta, tente novamente mais tarde!"
       render "edit"
     end
   end

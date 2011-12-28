@@ -21,7 +21,7 @@ Feature: Cadastrar Clinica
       And I fill in clinica's cnpj with "123"
       And I fill in clinica's senha with "senha"
       And I press "Confirmar"
-      Then I should see "*Não é válido"
+      Then I should see "Erro ao criar conta"
 
     Scenario: Clinica tenta se cadastrar sem email
       Given I am not logged in
