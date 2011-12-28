@@ -16,7 +16,7 @@
 
       <div id="header">	
 	<div id="logo"> 
-		<img src="../app/assets/images/rails.png"/>
+		<img src="app/assets/images/rails.png"/>
 	</div>
 	<div id="slogan">
 		<h1> Receituário Online </h1> 

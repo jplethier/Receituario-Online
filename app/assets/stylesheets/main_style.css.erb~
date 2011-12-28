@@ -3,7 +3,7 @@ div#pagina {
     width: 100%;
 }
 div#cabecalho {
-    background-color: whiteSmoke;
+    background-color: #DDDDDD;
     border: medium solid black;
     border-radius: 10px 10px 10px 10px;
     float: left;
@@ -54,7 +54,7 @@ div#cabecalho div.menuUsuario ul li a:hover {
     text-decoration: underline;
 }
 div#corpo {
-    background: none repeat scroll 0 0 WhiteSmoke;
+    background: none repeat scroll 0 0 #FFFFFF;
     border: 3px solid;
     border-radius: 6px 6px 6px 6px;
     float: left;
@@ -103,21 +103,23 @@ div.msg_sucesso {
     margin: 5px;
     padding: 2px;
 }
+
 div#header {
-    background-color: PowderBlue;
+    background-color: SeaShell;
     border: 1px solid;
     float: left;
     height: 150px;
     width: 100%;
 }
+
 div#logo {
-    background: url("http://www.phenforum.com/images/phentermine/prescription.png") no-repeat scroll 0 0 transparent;
     float: left;
-    height: 125px;
+    height: 110px;
     margin-left: 100px;
     margin-top: 20px;
     width: 200px;
 }
+
 div#slogan {
     float: left;
     height: 88px;
@@ -127,4 +129,3 @@ div#slogan {
     text-align: left;
     width: 796px;
 }
-
