@@ -21,7 +21,7 @@ Feature: Cadastrar Clinica
       And I fill in clinica's cnpj with "123"
       And I fill in clinica's senha with "senha"
       And I press "Confirmar"
-      Then I should see "Erro ao criar conta"
+      Then I should see "Erro ao criar a conta"
 
     Scenario: Clinica tenta se cadastrar sem email
       Given I am not logged in
@@ -31,7 +31,7 @@ Feature: Cadastrar Clinica
       And I fill in clinica's cnpj with "123"
       And I fill in clinica's senha with "senha"
       And I press "Confirmar"
-      Then I should see "*Não pode ficar em branco"
+      Then I should see "Erro ao criar a conta"
 
     Scenario: Clinica tenta se cadastrar sem senha
       Given I am not logged in
@@ -41,7 +41,7 @@ Feature: Cadastrar Clinica
       And I fill in clinica's cnpj with "123"
       And I fill in clinica's senha with ""
       And I press "Confirmar"
-      Then I should see "*Não pode ficar em branco"
+      Then I should see "Erro ao criar a conta"
 
     Scenario: Clinica tenta se cadastrar sem cnpj
       Given I am not logged in
@@ -51,4 +51,4 @@ Feature: Cadastrar Clinica
       And I fill in clinica's cnpj with ""
       And I fill in clinica's senha with "senha"
       And I press "Confirmar"
-      Then I should see "*Não pode ficar em branco"
+      Then I should see "Erro ao criar a conta"
