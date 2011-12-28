@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20111211210619) do
   end
 
   create_table "farmacias_farmaceuticos", :force => true do |t|
-    t.integer  "farmacia_id",     :null => false
-    t.integer  "farmaceutico_id", :null => false
+    t.integer  "farmacia_id"
+    t.integer  "farmaceutico_id"
     t.date     "data_demissao"
     t.datetime "created_at"
     t.datetime "updated_at"
