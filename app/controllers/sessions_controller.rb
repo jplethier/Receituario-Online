@@ -4,6 +4,9 @@ class SessionsController < ApplicationController
     
   end
 
+  def show
+  end
+
   def create
     @usuario = Usuario.authenticate(params[:session][:cpf_cnpj], params[:session][:senha])
     if @usuario
