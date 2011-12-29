@@ -18,6 +18,8 @@ module Fields
       field_id = Fields::RECEITA[field]
     when "medico"
       field_id = Fields::MEDICO[field]
+    when "session"
+      field_id = Fields::SESSION[field]
     end
 
     field_id ? field_id : "#{field} not found on #{__FILE__}"
@@ -32,7 +34,8 @@ module Fields
   }
 
   USUARIO = {
-    
+    "cpf_cnpj" => "usuario_cpf_cnpj",
+    "senha" => "usuario_senha"
   }
 
   FARMACIA = {
@@ -57,6 +60,11 @@ module Fields
 
   MEDICO = {
     
+  }
+
+  SESSION = {
+    "cpf_cnpj" => "session_cpf_cnpj",
+    "senha" => "session_senha" 
   }
 
 end

@@ -20,7 +20,7 @@ class Usuario < ActiveRecord::Base
   before_save :criptografar_senha
 
   def self.por_cpf_cnpj(cpf_cnpj)
-    where("usuarios.cpf_cnpj = ?", cpf_cnpj)
+    where("usuarios.cpf_cnpj = ?", cpf_cnpj).first
   end
 
   def criptografar(senha)
@@ -28,7 +28,7 @@ class Usuario < ActiveRecord::Base
   end
 
   def self.authenticate(cpf_cnpj, senha)
-    usuario = por_cpf_cnpj(cpf_cnpj).first
+    usuario = por_cpf_cnpj(cpf_cnpj)
     return nil  if usuario.nil?
     return usuario if usuario.senha == Digest::SHA2.hexdigest(senha)
   end

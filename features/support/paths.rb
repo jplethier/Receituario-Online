@@ -12,6 +12,8 @@ module NavigationHelpers
       '/'
     when /new clinica page/
       new_clinica_path
+    when /sign in page/
+      new_session_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

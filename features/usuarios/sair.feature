@@ -4,10 +4,10 @@ Feature: Sign out
   Should be able to sign out
 
     Scenario: User signs out
-      Given I am a user with an email "user@email.com" and password "password"
-      When I sign in as "user@email.com/password"
+      And I am a usuario with a cpf or cnpj "123" and senha "senha"
+      When I sign in as "123/senha"
       Then I should be signed in
       And I sign out
-      Then I should see "Fez logout com sucesso."
+      Then I should see "Fez logout com sucesso!"
       When I return next time
       Then I should be signed out

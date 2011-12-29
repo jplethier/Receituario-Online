@@ -1,3 +1,4 @@
+# coding: UTF-8
 class SessionsController < ApplicationController
   
   def new
@@ -14,16 +15,16 @@ class SessionsController < ApplicationController
       if tipo_de_usuario == Usuario::MEDICO
         clinica_corrente = medico_corrente.clinicas.first
       end
-      redirect_to root_path
+      redirect_to root_path, :notice => "Login realizado com sucesso!"
     else
-      #erro
+      flash.now[:error] = "Usuário não cadastrado ou senha errada."
       render 'new'
     end
   end
 
   def destroy
     sign_out
-    redirect_to root_path
+    redirect_to root_path, :notice => "Fez logout com sucesso!"
   end
 
 end
