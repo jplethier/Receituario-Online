@@ -8,8 +8,9 @@ class FarmaciasController < ApplicationController
   def create
     @farmacia = Farmacia.new(params[:farmacia])
     if @farmacia.save
-      redirect_to root_path
+      redirect_to root_path, :notice => "Conta criada com sucesso"
     else
+      flash.now[:error] = "Erro ao criar a conta"
       render 'new'
     end
   end

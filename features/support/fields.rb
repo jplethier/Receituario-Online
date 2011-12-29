@@ -39,7 +39,11 @@ module Fields
   }
 
   FARMACIA = {
-    
+    "nome" => "farmacia_usuario_attributes_nome",
+    "email" => "farmacia_usuario_attributes_email",
+    "cnpj" => "farmacia_usuario_attributes_cpf_cnpj",
+    "senha" => "farmacia_usuario_attributes_senha",
+    "endereco" => "farmacia_endereco"
   }
 
   PACIENTE = {

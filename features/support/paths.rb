@@ -12,6 +12,8 @@ module NavigationHelpers
       '/'
     when /new clinica page/
       new_clinica_path
+    when /new farmacia page/
+      new_farmacia_path
     when /sign in page/
       new_session_path
 
