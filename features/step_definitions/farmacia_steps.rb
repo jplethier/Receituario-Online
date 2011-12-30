@@ -1,5 +1,5 @@
-Given /^I am logged in as a clinica with cnpj "([^"]*)" and senha "([^"]*)"$/ do |cnpj, senha|
-  @current_user = FactoryGirl.create :clinica
+Given /^I am logged in as a farmacia with cnpj "([^"]*)" and senha "([^"]*)"$/ do |cnpj, senha|
+  @current_user = FactoryGirl.create :farmacia
   @current_user.usuario = FactoryGirl.create :usuario, :cpf_cnpj => cnpj, :senha => senha
   @current_user.save
   step %{I go to the sign in page}

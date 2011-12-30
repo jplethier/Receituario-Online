@@ -10,8 +10,9 @@ class MedicosController < ApplicationController
     @medico = Medico.new(params[:medico])
     if @medico.save
       ClinicaMedico.create!(:clinica => clinica_corrente, :medico => @medico)
-      redirect_to root_path
+      redirect_to root_path, :notice => "Conta criada com sucesso"
     else
+      flash.now[:error] = "Erro ao criar a conta"
       render 'new'
     end
   end

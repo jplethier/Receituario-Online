@@ -10,8 +10,9 @@ class BalconistasController < ApplicationController
     @balconista = Balconista.new(params[:balconista])
     if @balconista.save
       BalconistaFarmacia.create!(:balconista => @balconista, :farmacia => farmacia_corrente)
-      redirect_to root_path
+      redirect_to root_path, :notice => "Conta criada com sucesso"
     else
+      flash.now[:error] = "Erro ao criar a conta"
       render 'new'
     end
   end

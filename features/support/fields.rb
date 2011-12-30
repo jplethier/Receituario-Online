@@ -47,15 +47,24 @@ module Fields
   }
 
   PACIENTE = {
-    
+    "nome" => "paciente_usuario_attributes_nome",
+    "email" => "paciente_usuario_attributes_email",
+    "cpf" => "paciente_usuario_attributes_cpf_cnpj",
+    "senha" => "paciente_usuario_attributes_senha",
   }
 
   FARMACEUTICO = {
-    
+    "nome" => "farmaceutico_usuario_attributes_nome",
+    "email" => "farmaceutico_usuario_attributes_email",
+    "cpf" => "farmaceutico_usuario_attributes_cpf_cnpj",
+    "senha" => "farmaceutico_usuario_attributes_senha",
   }
 
   BALCONISTA = {
-    
+    "nome" => "balconista_usuario_attributes_nome",
+    "email" => "balconista_usuario_attributes_email",
+    "cpf" => "balconista_usuario_attributes_cpf_cnpj",
+    "senha" => "balconista_usuario_attributes_senha",
   }
 
   RECEITA = {
@@ -63,7 +72,11 @@ module Fields
   }
 
   MEDICO = {
-    
+    "nome" => "medico_usuario_attributes_nome",
+    "email" => "medico_usuario_attributes_email",
+    "cpf" => "medico_usuario_attributes_cpf_cnpj",
+    "senha" => "medico_usuario_attributes_senha",
+    "crm" => "medico_crm",
   }
 
   SESSION = {

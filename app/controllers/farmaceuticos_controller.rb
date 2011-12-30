@@ -10,8 +10,9 @@ class FarmaceuticosController < ApplicationController
     @farmaceutico = Farmaceutico.new(params[:farmaceutico])
     if @farmaceutico.save
       FarmaciaFarmaceutico.create!(:farmacia => farmacia_corrente, :farmaceutico => @farmaceutico)
-      redirect_to root_path
+      redirect_to root_path, :notice => "Conta criada com sucesso"
     else
+      flash.now[:error] = "Erro ao criar a conta"
       render 'new'
     end
   end

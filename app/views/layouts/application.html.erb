@@ -46,7 +46,7 @@
               <% if tipo_de_usuario == Usuario::FARMACIA %>
                 <li><%= link_to 'Cadastrar Balconista', new_farmacia_balconista_path(farmacia_corrente) %></li>
                 <li><%= link_to 'Procurar Balconistas', farmacia_balconistas_path(farmacia_corrente) %></li>
-                <li><%= link_to 'Cadastrar Farmaceutico', new_farmacia_farmaceutico_path(farmacia_corrente) %></li>
+                <li><%= link_to 'Cadastrar Farmacêutico', new_farmacia_farmaceutico_path(farmacia_corrente) %></li>
                 <li><%= link_to 'Procurar Farmacêuticos', farmacia_farmaceuticos_path(farmacia_corrente) %></li>
                 <li><%= link_to 'Listar Funcionários da Farmácia', funcionarios_farmacia_path(farmacia_corrente) %></li>
               <% end %>

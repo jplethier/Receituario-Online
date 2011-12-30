@@ -8,8 +8,9 @@ class PacientesController < ApplicationController
   def create
     @paciente = Paciente.new(params[:paciente])
     if @paciente.save
-      redirect_to root_path
+      redirect_to root_path, :notice => "Conta criada com sucesso"
     else
+      flash.now[:error] = "Erro ao criar a conta"
       render 'new'
     end
   end
