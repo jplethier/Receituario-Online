@@ -1,24 +1,22 @@
-<fieldset>
-  <legend>Cadastro de Farmacia</legend>
-    <%= form_for(@farmacia) do |f| %>
-      
-      <%= f.fields_for :usuario do |u| %>
-        <%= u.label :nome %></br>
-        <%= u.text_field :nome %></br>
+<h1>Cadastro de Farmácia</h1>
+<%= form_for(@farmacia) do |f| %>
+  
+  <%= f.fields_for :usuario do |u| %>
+    <%= u.label :nome %></br>
+    <%= u.text_field :nome %></br>
 
-        <%= u.label :cnpj %></br>
-        <%= u.text_field :cpf_cnpj %></br>
-      
-        <%= u.label :email %></br>
-        <%= u.email_field :email %></br>
-      
-        <%= u.label :senha %></br>
-        <%= u.password_field :senha %></br>
-      <% end %>
+    <%= u.label :cnpj %></br>
+    <%= u.text_field :cpf_cnpj %></br>
+  
+    <%= u.label :email %></br>
+    <%= u.email_field :email %></br>
+  
+    <%= u.label :senha %></br>
+    <%= u.password_field :senha %></br>
+  <% end %>
 
-      <%= f.label :endereco %><br/>
-      <%= f.text_field :endereco %><br/>
+  <%= f.label :endereco %><br/>
+  <%= f.text_field :endereco %><br/>
 
-      <%= f.submit 'Confirmar' %>
-    <% end %>
-</fieldset>
+  <%= f.submit 'Confirmar' %>
+<% end %>

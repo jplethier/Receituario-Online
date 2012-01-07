@@ -1,5 +1,10 @@
+<h1>Listagem de Médicos da Clínica</h1>
 <div class="lista_medicos">
-  <% @medicos.each do |medico| %>
-    <%= render :partial => 'medicos/medico', :locals => {:medico => medico} %>
+  <% if @medicos.empty? %>
+    Não há nenhum médico alocado a essa clínica ainda.
+  <% else %>
+    <% @medicos.each do |medico| %>
+      <%= render :partial => 'medicos/medico', :locals => {:medico => medico} %>
+    <% end %>
   <% end %>
 </div>

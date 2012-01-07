@@ -26,14 +26,16 @@
         <% if not logado? %>
           <div class="menuCabecalho">
             <ul>
+              <li><%= link_to 'Página Inicial', root_path %></li>
               <li><%= link_to 'Login', signin_path %></li>
-              <li><%= link_to 'Nova farmácia', new_farmacia_path %></li>
-              <li><%= link_to 'Nova clínica', new_clinica_path %></li>
+              <li><%= link_to 'Nova Farmácia', new_farmacia_path %></li>
+              <li><%= link_to 'Nova Clínica', new_clinica_path %></li>
             </ul>
           </div>
         <% else %>
           <div class="menuUsuario">
             <ul>
+              <li><%= link_to 'Página Inicial', root_path %></li>
               <% if tipo_de_usuario == Usuario::CLINICA %>
                 <li><%= link_to 'Cadastrar Médico', new_clinica_medico_path(clinica_corrente) %></li>
                 <li><%= link_to 'Procurar Médico', clinica_medicos_path(clinica_corrente) %></li>

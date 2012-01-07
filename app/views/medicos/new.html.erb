@@ -1,25 +1,22 @@
-<h1>Medicos#new</h1>
-<fieldset>
-  <legend>Cadastro de Médicos</legend>
-    <%= form_for([clinica_corrente, @medico]) do |f| %>
-      
-      <%= f.fields_for :usuario do |u| %>
-        <%= u.label :nome %></br>
-        <%= u.text_field :nome %></br>
+<h1>Cadastro de Médico</h1>
+<%= form_for([clinica_corrente, @medico]) do |f| %>
+  
+  <%= f.fields_for :usuario do |u| %>
+    <%= u.label :nome %></br>
+    <%= u.text_field :nome %></br>
 
-        <%= u.label :cpf %></br>
-        <%= u.text_field :cpf_cnpj %></br>
-      
-        <%= u.label :email %></br>
-        <%= u.email_field :email %></br>
-      
-        <%= u.label :senha %></br>
-        <%= u.password_field :senha %></br>
-      <% end %>
+    <%= u.label :cpf %></br>
+    <%= u.text_field :cpf_cnpj %></br>
+  
+    <%= u.label :email %></br>
+    <%= u.email_field :email %></br>
+  
+    <%= u.label :senha %></br>
+    <%= u.password_field :senha %></br>
+  <% end %>
 
-      <%= f.label :crm %><br/>
-      <%= f.text_field :crm %><br/>
+  <%= f.label :crm %><br/>
+  <%= f.text_field :crm %><br/>
 
-      <%= f.submit 'Confirmar' %>
-    <% end %>
-</fieldset>
+  <%= f.submit 'Confirmar' %>
+<% end %>

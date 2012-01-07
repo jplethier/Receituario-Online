@@ -1,22 +1,19 @@
-<h1>Pacientes#new</h1>
-<fieldset>
-  <legend>Cadastro de Pacientes</legend>
-    <%= form_for(@paciente) do |f| %>
-      
-      <%= f.fields_for :usuario do |u| %>
-        <%= u.label :nome %></br>
-        <%= u.text_field :nome %></br>
+<h1>Cadastro de Paciente</h1>
+<%= form_for(@paciente) do |f| %>
+  
+  <%= f.fields_for :usuario do |u| %>
+    <%= u.label :nome %></br>
+    <%= u.text_field :nome %></br>
 
-        <%= u.label :cpf %></br>
-        <%= u.text_field :cpf_cnpj %></br>
-      
-        <%= u.label :email %></br>
-        <%= u.email_field :email %></br>
-      
-        <%= u.label :senha %></br>
-        <%= u.password_field :senha %></br>
-      <% end %>
-      
-      <%= f.submit 'Confirmar' %>
-    <% end %>
-</fieldset>
+    <%= u.label :cpf %></br>
+    <%= u.text_field :cpf_cnpj %></br>
+  
+    <%= u.label :email %></br>
+    <%= u.email_field :email %></br>
+  
+    <%= u.label :senha %></br>
+    <%= u.password_field :senha %></br>
+  <% end %>
+  
+  <%= f.submit 'Confirmar' %>
+<% end %>
