@@ -10,13 +10,13 @@
     <div id="pagina">
       <% if logado? %>
         <div id="informacoes_usuario">
-          <span><strong>Usuario Logado - CPF: </strong><%= usuario_corrente.cpf_cnpj %><strong> - Nome: </strong><%= usuario_corrente.nome %><strong> - Tipo: </strong><%= tipo_de_usuario %>
+          <span><strong>Usuário Logado - CPF: </strong><%= usuario_corrente.cpf_cnpj %><strong> - Nome: </strong><%= usuario_corrente.nome %><strong> - Tipo: </strong><%= tipo_de_usuario %>
         </div>
       <% end %>
 
       <div id="header">	
 	<div id="logo"> 
-		<img src="app/assets/images/rails.png"/>
+		<img src="../app/assets/images/rails.png"/>
 	</div>
 	<div id="slogan">
 		<h1> Receituário Online </h1> 
@@ -46,7 +46,7 @@
               <% if tipo_de_usuario == Usuario::FARMACIA %>
                 <li><%= link_to 'Cadastrar Balconista', new_farmacia_balconista_path(farmacia_corrente) %></li>
                 <li><%= link_to 'Procurar Balconistas', farmacia_balconistas_path(farmacia_corrente) %></li>
-                <li><%= link_to 'Cadastrar Farmaceutico', new_farmacia_farmaceutico_path(farmacia_corrente) %></li>
+                <li><%= link_to 'Cadastrar Farmacêutico', new_farmacia_farmaceutico_path(farmacia_corrente) %></li>
                 <li><%= link_to 'Procurar Farmacêuticos', farmacia_farmaceuticos_path(farmacia_corrente) %></li>
                 <li><%= link_to 'Listar Funcionários da Farmácia', funcionarios_farmacia_path(farmacia_corrente) %></li>
               <% end %>
