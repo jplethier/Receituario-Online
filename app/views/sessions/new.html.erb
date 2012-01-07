@@ -1,15 +1,11 @@
-<h1>Login</h1>
-<fieldset>
-  <legend>Login</legend>
-  <%= form_for(:session, :url => sessions_path) do |f| %>
+<h1>Entrar no Sistema</h1>
+<%= form_for(:session, :url => sessions_path) do |f| %>
 
-    <%= f.label "CPF ou CNPJ" %></br>
-    <%= f.text_field :cpf_cnpj %></br>
+  <%= f.label "CPF ou CNPJ" %></br>
+  <%= f.text_field :cpf_cnpj %></br>
 
-    <%= f.label :senha %></br>
-    <%= f.password_field :senha %></br>
+  <%= f.label :senha %></br>
+  <%= f.password_field :senha %></br>
 
-    <%= f.submit 'Login' %>
-  <% end %>
-
-</fieldset>
+  <%= f.submit 'Login' %>
+<% end %>
