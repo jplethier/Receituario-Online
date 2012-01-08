@@ -50,6 +50,8 @@ class MedicosController < ApplicationController
   end
 
   def salvar_clinica
+    clinica_correte = Clinica.find(params["Clínica"])
+    redirect_to root_path, :notice => "Clínica alterada com sucesso."
   end
 
 end
