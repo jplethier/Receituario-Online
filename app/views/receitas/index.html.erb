@@ -1,4 +1,5 @@
-<h1>Lista de Receitas</h1><div class="lista_receitas">
+<h1>Lista de Receitas</h1>
+<div class="lista_receitas">
   <% @receitas.each do |receita| %>
     <%= render :partial => 'receitas/receita', :locals => {:receita => receita} %>
   <% end %>

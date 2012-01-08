@@ -13,10 +13,10 @@
           <span>
             <strong>Usuário Logado - CPF: </strong><%= usuario_corrente.cpf_cnpj %><strong> - Nome: </strong><%= usuario_corrente.nome %><strong> - Tipo: </strong><%= tipo_de_usuario %>
             <% if tipo_de_usuario == Usuario::MEDICO %>
-              <strong> - Clínica: </strong><%= clinica_corrente.usuario.nome %> <%= link_to 'Alterar Clínica', "#" %>
+              <strong> - Clínica: </strong><%= clinica_corrente.usuario.nome %> <%= link_to 'Alterar Clínica', alterar_clinica_clinica_medico_path(clinica_corrente, medico_corrente) %>
             <% end %>
             <% if tipo_de_usuario == Usuario::FARMACEUTICO || tipo_de_usuario == Usuario::BALCONISTA %>
-              <strong> - Fármacia: </strong><%= farmacia_corrente %> <%= link_to 'Alterar Clínica', "#" %>
+              <strong> - Fármacia: </strong><%= farmacia_corrente %> <%= link_to 'Alterar Clínica', alterar_clinica_clinica_medico_path(farmacia_corrente, farmaceutico_corrente) %>
             <% end %>
           </span>
         </div>

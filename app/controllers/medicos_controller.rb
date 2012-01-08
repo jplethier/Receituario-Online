@@ -46,4 +46,10 @@ class MedicosController < ApplicationController
     end
   end
 
+  def alterar_clinica
+  end
+
+  def salvar_clinica
+  end
+
 end

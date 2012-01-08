@@ -8,6 +8,8 @@ Receituario::Application.routes.draw do
       member do
         get 'alocar_medico'
         get 'desalocar_medico'
+        get 'alterar_clinica'
+        get 'salvar_clinica'
       end
     end
   end
