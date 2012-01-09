@@ -7,7 +7,7 @@ module MedicosHelper
       if clinicas_hash.nil?
         clinicas_hash = {clinica.usuario.nome => clinica.id}
       else
-        hash_of_states.merge!({clinica => clinica.id})
+        clinicas_hash.merge!({clinica => clinica.id})
       end
     end
     options_for_select(clinicas_hash, selected)

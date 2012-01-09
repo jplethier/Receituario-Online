@@ -16,7 +16,12 @@
               <strong> - Clínica: </strong><%= clinica_corrente.usuario.nome %> <%= link_to 'Alterar Clínica', alterar_clinica_clinica_medico_path(clinica_corrente, medico_corrente) %>
             <% end %>
             <% if tipo_de_usuario == Usuario::FARMACEUTICO || tipo_de_usuario == Usuario::BALCONISTA %>
-              <strong> - Fármacia: </strong><%= farmacia_corrente %> <%= link_to 'Alterar Clínica', alterar_clinica_clinica_medico_path(farmacia_corrente, farmaceutico_corrente) %>
+              <strong> - Fármacia: </strong><%= farmacia_corrente %> 
+              <% if tipo_de_usuario == Usuario::FARMACEUTICO %>
+                <%= link_to 'Alterar Farmácia', alterar_farmacia_farmacia_farmaceutico_path(farmacia_corrente, farmaceutico_corrente) %>
+              <% else %>
+                <%= link_to 'Alterar Farmácia', alterar_farmacia_farmacia_balconista_path(farmacia_corrente, balconista_corrente) %>
+              <% end %>
             <% end %>
           </span>
         </div>
