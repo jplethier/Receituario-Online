@@ -46,4 +46,12 @@ class FarmaceuticosController < ApplicationController
     @farmaceuticos = Farmaceutico.all
   end
 
+  def alterar_farmacia
+  end
+
+  def salvar_farmacia
+    farmacia_corrente = Farmacia.find(params["Farmácia"])
+    redirect_to root_path, :notice => "Farmácia alterada com sucesso."
+  end
+
 end

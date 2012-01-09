@@ -1,0 +1,5 @@
+<h1>Selecionar Farmácia</h1>
+<form id="search_form" action="<%= salvar_farmacia_farmacia_farmaceutico_path %>" method="get">
+  <%= select_tag "Farmácia", farmacia_options(farmacia_corrente.id) %>
+  <button id="confirm" type="submit">Confirmar</button>
+</form>

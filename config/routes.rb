@@ -31,6 +31,8 @@ Receituario::Application.routes.draw do
       member do
         get 'alocar_farmaceutico'
         get 'desalocar_farmaceutico'
+        get 'alterar_farmacia'
+        get 'salvar_farmacia'
       end
     end
     
@@ -38,6 +40,8 @@ Receituario::Application.routes.draw do
       member do
         get 'alocar_balconista'
         get 'desalocar_balconista'
+        get 'alterar_farmacia'
+        get 'salvar_farmacia'
       end
     end
   end

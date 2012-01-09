@@ -10,7 +10,7 @@ module MedicosHelper
         hash_of_states.merge!({clinica => clinica.id})
       end
     end
-    options_for_select(clinicas_hash, clinica_corrente.id)
+    options_for_select(clinicas_hash, selected)
   end
 
 end

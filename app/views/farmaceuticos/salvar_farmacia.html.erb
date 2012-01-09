@@ -1,5 +1,5 @@
 <h1>Selecionar Clínica</h1>
 <form id="search_form" action="<%= salvar_clinica_clinica_medico_path %>" method="get">
-  <%= select_tag "Clínica", clinica_options(clinica_corrente.id) %>
+  <%= select_tag "Clínica", clinica_options(params[:clinica_selecionada]) %>
   <button id="confirm" type="submit">Confirmar</button>
 </form>
