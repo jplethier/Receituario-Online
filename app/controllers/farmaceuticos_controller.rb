@@ -51,6 +51,7 @@ class FarmaceuticosController < ApplicationController
 
   def salvar_farmacia
     farmacia_corrente = Farmacia.find(params["Farmácia"])
+    cookies.signed[:farmacia] = [farmacia_corrente.id]
     redirect_to root_path, :notice => "Farmácia alterada com sucesso."
   end
 

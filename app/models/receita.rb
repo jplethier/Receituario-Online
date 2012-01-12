@@ -15,8 +15,6 @@ class Receita < ActiveRecord::Base
 
   def atender(atendente, farmacia)
     self.atendente = atendente
-    debugger
-    1
     self.farmacia = farmacia
     self.dataAtendimento = Date.today
     self.save

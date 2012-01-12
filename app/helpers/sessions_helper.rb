@@ -2,6 +2,8 @@ module SessionsHelper
 
   def sign_in(usuario)
     cookies.permanent.signed[:remember_token] = [usuario.id, usuario.email]
+    cookies.permanent.signed[:clinica] = []
+    cookies.permanent.signed[:farmacia] = []
 
     self.usuario_corrente = usuario
     self.farmacia_corrente = Farmacia.por_usuario(usuario_corrente).first
@@ -16,6 +18,8 @@ module SessionsHelper
 
   def sign_out
     cookies.delete(:remember_token)
+    cookies.delete(:clinica)
+    cookies.delete(:farmacia)
     self.usuario_corrente = nil
     @tipo_de_usuario = nil
   end
@@ -55,6 +59,7 @@ module SessionsHelper
 
   def farmacia_corrente
     @farmacia_corrente ||= Farmacia.por_usuario(usuario_from_remember_token).first
+    @farmacia_corrente ||= Farmacia.find(cookies.signed[:farmacia][0]) if not cookies.signed[:farmacia].empty?
     if @farmacia_corrente.nil?
       @farmacia_corrente = farmaceutico_corrente.farmacias.first if farmaceutico_corrente
       @farmacia_corrente = balconista_corrente.farmacias.first if balconista_corrente
@@ -64,6 +69,7 @@ module SessionsHelper
 
   def clinica_corrente
     @clinica_corrente ||= Clinica.por_usuario(usuario_from_remember_token).first
+    @clinica_corrente ||= Clinica.find(cookies.signed[:clinica][0]) if not cookies.signed[:clinica].empty?
     if @clinica_corrente.nil? && medico_corrente
       @clinica_corrente = medico_corrente.clinicas.first
     end

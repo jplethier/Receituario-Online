@@ -50,7 +50,8 @@ class MedicosController < ApplicationController
   end
 
   def salvar_clinica
-    clinica_correte = Clinica.find(params["Clínica"])
+    clinica_corrente = Clinica.find(params["Clínica"])
+    cookies.signed[:clinica] = [clinica_corrente.id]
     redirect_to root_path, :notice => "Clínica alterada com sucesso."
   end
 
